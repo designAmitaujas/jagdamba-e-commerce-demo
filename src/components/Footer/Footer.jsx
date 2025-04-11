@@ -128,9 +128,9 @@ const Footer = () => {
             <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right pt-3">
               <div class="footer-menu">
                 <ul>
-                  {/* <li>
+                  <li>
                     <a href="#">Term Of Use</a>
-                  </li> */}
+                  </li>
                   <li>
                     <a href="#">Privacy Policy</a>
                   </li>
