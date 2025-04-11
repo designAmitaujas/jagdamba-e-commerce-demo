@@ -1,0 +1,12 @@
+.read-more-link {
+    color: blue !important;
+  }
+  
+  .read-more-link:visited {
+    color: blue !important;
+  }
+  
+  .read-more-link:hover {
+    color: darkblue !important;
+  }
+  

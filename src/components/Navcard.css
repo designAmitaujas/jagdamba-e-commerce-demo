@@ -1,0 +1,189 @@
+.nav-card-container {
+  padding: 15px 0;
+  background-color: #fff;
+}
+
+.nav-card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  padding: 0 15px;
+}
+
+.nav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: none !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav-link:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.nav-link img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.nav-link p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1400px) {
+  .nav-tabs {
+    gap: 8px;
+  }
+  
+  .nav-link img {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .nav-link p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-tabs {
+    gap: 6px;
+  }
+  
+  .nav-link {
+    padding: 8px;
+  }
+  
+  .nav-link img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .nav-link p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-card-container {
+    padding: 10px 0;
+  }
+  
+  .nav-tabs {
+    gap: 5px;
+    padding: 0 10px;
+  }
+  
+  .nav-link {
+    padding: 6px;
+  }
+  
+  .nav-link img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 6px;
+  }
+  
+  .nav-link p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-card-container {
+    padding: 8px 0;
+  }
+  
+  .nav-tabs {
+    gap: 4px;
+    padding: 0 8px;
+  }
+  
+  .nav-link {
+    padding: 5px;
+  }
+  
+  .nav-link img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+  
+  .nav-link p {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-card-container {
+    padding: 5px 0;
+  }
+  
+  .nav-tabs {
+    gap: 3px;
+    padding: 0 5px;
+  }
+  
+  .nav-link {
+    padding: 4px;
+  }
+  
+  .nav-link img {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 3px;
+  }
+  
+  .nav-link p {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-card-container {
+    padding: 4px 0;
+  }
+  
+  .nav-tabs {
+    gap: 2px;
+    padding: 0 4px;
+  }
+  
+  .nav-link {
+    padding: 3px;
+  }
+  
+  .nav-link img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 2px;
+  }
+  
+  .nav-link p {
+    font-size: 0.6rem;
+  }
+} 

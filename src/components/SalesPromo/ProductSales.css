@@ -1,0 +1,83 @@
+.saleProduct-card {
+  font-family: var(--font-family);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.saleProduct-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-outline-secondary:hover {
+  background-color: #33446b;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.summer-banner {
+  position: absolute;
+  top: 20px;
+  left: -35px;
+  background-color: orange;
+  color: var(--accent-foreground);
+  padding: 5px 40px;
+  transform: rotate(-45deg);
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--card-foreground);
+}
+
+.price-section {
+  margin-bottom: 15px;
+}
+
+.original-price {
+  text-decoration: line-through;
+
+  margin-right: 10px;
+}
+
+.discount-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.stock-status {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 180px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .discount-price {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,10 @@
+.home-container {
+    padding-top: 70px;
+  }
+  
+  @media (min-width: 768px) {
+    .home-container {
+      padding-top: 170px;
+    }
+  }
+  
