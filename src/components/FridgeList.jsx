@@ -17,6 +17,7 @@ import Footer from "./Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
+// import "../components/FridgeList.css"; // Import your CSS file here
 import "../components/FridgeList.css"; // Import your CSS file here
 
 const FridgeList = () => {
@@ -350,13 +351,14 @@ const FridgeList = () => {
                         />
                         <Badge
                           bg="warning"
-                          className="position-absolute top-0 start-0 mx-1"
+                          className="position-absolute top-0 start-0"
+                          style={{ marginLeft: "-40px" }}
                         >
                           Jagdamba's Choice
                         </Badge>
                         <Button
                           variant="light"
-                          className="position-absolute top-0 end-0 m-2 rounded-circle p-2 wishlist-btn"
+                          className="position-absolute top-0 end-0 left-5  rounded-circle p-2 wishlist-btn"
                           onClick={(e) => {
                             e.stopPropagation();
                             handleWishlistToggle(product);
@@ -365,6 +367,7 @@ const FridgeList = () => {
                             color: isInWishlist(product.id) ? "red" : "inherit",
                             border: "none",
                             backgroundColor: "white",
+                              marginRight: "-48px",
                           }}
                         >
                           <Heart

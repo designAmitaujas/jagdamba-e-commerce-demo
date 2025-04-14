@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import './Wishlist.css'; // Assuming you have some styles for the wishlist
 
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
