@@ -225,7 +225,140 @@ const Addcart = () => {
                   Gujarat 390015
                 </Card.Text>
               </Card.Body>
+
+              
             </Card>
+
+            <Accordion defaultActiveKey={null} flush className="mt-3" >
+      <Accordion.Item eventKey="0" className="no-icon" placeholder="new">
+        
+
+        
+        <Accordion.Header
+        
+        > Add New Shipping Address </Accordion.Header>
+        <Accordion.Body>
+          <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="fullName">
+              <Form.Label>Full Name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="John Doe"
+                name="fullName"
+                value={address.fullName}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Please enter your full name.
+              </Form.Control.Feedback>
+            </Form.Group>
+
+  <div className="row mb-3">
+
+  <Form.Group className="col-md-4" controlId="country">
+              <Form.Label>Country</Form.Label>
+              <Form.Select 
+                required
+                name="country"
+                value={address.country}
+                onChange={handleInputChange}
+              >
+                <option>India</option>
+                <option>Canada</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+              </Form.Select>
+            </Form.Group>
+
+
+              <Form.Group className="col-md-4" controlId="city">
+                <Form.Label>City</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  name="city"
+                  value={address.city}
+                  onChange={handleInputChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your city.
+                </Form.Control.Feedback>
+              </Form.Group>
+
+              <Form.Group className="col-md-4" controlId="state">
+                <Form.Label>State</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  name="state"
+                  value={address.state}
+                  onChange={handleInputChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your state.
+                </Form.Control.Feedback>
+              </Form.Group>
+
+            </div>
+
+
+
+            <Form.Group className="mb-3" controlId="addressLine1">
+              <Form.Label>Address Line 1</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="123 Main St"
+                name="addressLine1"
+                value={address.addressLine1}
+                onChange={handleInputChange}
+              />
+              <Form.Control.Feedback type="invalid">
+                Please enter your street address.
+              </Form.Control.Feedback>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="addressLine2">
+              <Form.Label>Address Line 2</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Apartment, studio, or floor"
+                name="addressLine2"
+                value={address.addressLine2}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="col-md-2" controlId="zipCode">
+                <Form.Label>PIN Code</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  pattern="[0-9]{5}"
+                  name="zipCode"
+                  value={address.zipCode}
+                  onChange={handleInputChange}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please enter a valid 5-digit ZIP code.
+                </Form.Control.Feedback>
+              </Form.Group>
+
+           
+
+            <div className="d-flex justify-content-end">
+              <Button variant="primary" type="submit">
+                Save Address
+              </Button>
+              
+            </div>
+          </Form>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+
           </div>
         </div>
       </div>
