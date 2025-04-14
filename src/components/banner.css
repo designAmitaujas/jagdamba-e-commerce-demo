@@ -358,11 +358,11 @@
   text-decoration-line: none;
 }
 
-.display-6{
+.display-6 {
   padding-left: 40px;
 }
 
-.text-uppercase{
+.text-uppercase {
   padding-left: 20px;
 }
 
@@ -514,7 +514,7 @@
   #new {
     min-height: 20vh;
   }
- 
+
   #new .sCard {
     width: 140px;
     height: 190px;
@@ -537,7 +537,7 @@
     font-size: 10px;
   }
   .card {
-    height: 145px;
+    /* height: 460px; */
     max-width: none;
   }
 }

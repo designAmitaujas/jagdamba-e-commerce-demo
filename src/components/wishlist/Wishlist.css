@@ -131,3 +131,12 @@ body {
   display: inline-block;
   text-align: Center;
 }
+@media (max-width: 320px) {
+  .flex-column2 {
+    flex-direction: column !important;
+    margin-bottom: 300px;
+  }
+  element.style {
+    height: 200px;
+  }
+}

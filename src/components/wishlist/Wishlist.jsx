@@ -1,12 +1,12 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import { Heart, ShoppingCart, Trash2 } from 'lucide-react';
-import Header from '../Header';
-import Footer from '../Footer/Footer';
-import { useWishlist } from '../../context/WishlistContext';
-import { useCart } from '../../context/CartContext';
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { Heart, ShoppingCart, Trash2 } from "lucide-react";
+import Header from "../Header";
+import Footer from "../Footer/Footer";
+import { useWishlist } from "../../context/WishlistContext";
+import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
+import "../wishlist/Wishlist.css";
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
@@ -19,7 +19,7 @@ const Wishlist = () => {
   return (
     <div>
       <Header />
-      
+
       <Container fluid className="py-4" style={{ marginTop: "200px" }}>
         <Row>
           <Col>
@@ -27,7 +27,7 @@ const Wishlist = () => {
               <h2>My Wishlist</h2>
               <span className="text-muted">{wishlistItems.length} items</span>
             </div>
-            
+
             {wishlistItems.length === 0 ? (
               <div className="text-center py-5">
                 <Heart size={64} className="text-muted mb-3" />
@@ -50,14 +50,14 @@ const Wishlist = () => {
                             className="w-200 h-200 px-5 py-2 object-fit-contain"
                             style={{ maxHeight: "200px", width: "auto" }}
                           />
-                          <Button 
-                            variant="light" 
+                          <Button
+                            variant="light"
                             className="position-absolute top-0 end-0 m-2 rounded-circle p-2"
                             onClick={() => removeFromWishlist(item.id)}
-                            style={{ 
-                              color: 'red',
-                              border: 'none',
-                              backgroundColor: 'white'
+                            style={{
+                              color: "red",
+                              border: "none",
+                              backgroundColor: "white",
                             }}
                           >
                             <Trash2 size={20} />
@@ -69,19 +69,25 @@ const Wishlist = () => {
                         <div className="d-flex justify-content-between align-items-start">
                           <div>
                             <h5 className="mb-2">{item.name}</h5>
-                            <div className="text-muted">Product ID: {item.id}</div>
+                            <div className="text-muted">
+                              Product ID: {item.id}
+                            </div>
                           </div>
                           <div className="text-end">
                             <h4 className="mb-0">₹{item.price}</h4>
-                            <small className="text-muted text-decoration-line-through">₹{item.price * 1.35}</small>
+                            <small className="text-muted text-decoration-line-through">
+                              ₹{item.price * 1.35}
+                            </small>
                             <div className="text-success">25% off</div>
-                            <div className="text-success mt-1">Free delivery</div>
+                            <div className="text-success mt-1">
+                              Free delivery
+                            </div>
                           </div>
                         </div>
 
                         <div className="mt-4">
-                          <Button 
-                            variant="primary" 
+                          <Button
+                            variant="primary"
                             className="d-flex align-items-center gap-2"
                             onClick={() => handleAddToCart(item)}
                           >
