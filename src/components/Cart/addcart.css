@@ -318,7 +318,31 @@
   .cartcard {
     margin: 0;
   }
+
+  .cartSummary {
+    padding: 1vh;
+  }
+
+  .imaga {
+    width: 80px;
+    height: 80px;
+  }
   .back-to-shop {
     margin-top: 0;
+  }
+
+  .cartTitle b {
+    font-size: 1rem;
+  }
+
+  .cartBtn {
+    font-size: 0.7rem;
+    padding: 0.8vh;
+  }
+
+  .selecteds,
+  #code {
+    padding: 0.8vh;
+    margin-bottom: 2vh;
   }
 }
