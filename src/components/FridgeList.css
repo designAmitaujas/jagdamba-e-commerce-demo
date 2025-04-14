@@ -1,3 +1,89 @@
+/* @media(min-width: 768px) {
+    .addCartbtn.full-width {
+        width: 100%;  
+    }
+    .shadow-sm {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+
+@media (min-width:320px) and (max-width: 480px) {
+    .addCartbtn{
+        width: 100%;
+        height: 50px;
+        padding: 20px 5px;
+        
+        object-fit: cover;
+        justify-content: center;
+    }
+
+   .texts {
+    padding-left: 20px;
+   }
+.buyNowbtn {
+    width: 100%;
+        height: 50px;
+        padding: 20px 5px;
+        font: 1em sans-serif;
+        font-size: smaller;
+        object-fit: cover;
+        margin-right: 0;
+}
+.btnfridge {
+    display: flex;
+    flex-direction: column;
+
+}
+
+Form.Check{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 200px;
+    padding-left: 0px;
+    padding-right: 500px;
+    font-size: smaller;
+}
+
+    .shadow-sm {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    #compare {
+        padding-right: 500px;
+        margin-right: 100px;
+    }
+    .newCard {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    Button.rounded-circle {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto; 
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 50px;
+    }
+    
+@media (min-width:481px) and (max-width: 768px) {
+    .addCartbtn.full-width {
+        width: 100%;
+    }
+    .shadow-sm {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}} */
+
+/* FridgeList.css */
+
 /* Base card styling */
 .newCard .shadow-sm {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -5,7 +91,7 @@
 
 .newCard .shadow-sm:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
 .innercarrd {
@@ -15,8 +101,7 @@
 /* Improved responsive styles */
 
 /* Desktop styles (default) */
-.addCartbtn,
-.buyNowbtn {
+.addCartbtn, .buyNowbtn {
   height: auto;
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
@@ -41,12 +126,11 @@
 
 /* Medium screens (tablets) */
 @media (min-width: 481px) and (max-width: 768px) {
-  .addCartbtn,
-  .buyNowbtn {
+  .addCartbtn, .buyNowbtn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
-
+  
   .shadow-sm {
     width: 100%;
     margin: 0 auto !important;
@@ -54,28 +138,27 @@
     padding-left: 0;
     padding-right: 0;
   }
-
+  
   .texts {
     flex-direction: column;
     width: 100%;
   }
-
+  
   .price-container {
     margin-top: 1rem;
     text-align: left;
   }
-
+  
   .btnfridge {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .addCartbtn,
-  .buyNowbtn {
+  
+  .addCartbtn, .buyNowbtn {
     flex: 1;
     min-width: 120px;
   }
-
+  
   .compare {
     width: 100%;
     margin-top: 0.75rem;
@@ -85,8 +168,7 @@
 
 /* Small screens (phones) */
 @media (min-width: 320px) and (max-width: 480px) {
-  .addCartbtn,
-  .buyNowbtn {
+  .addCartbtn, .buyNowbtn {
     width: 100%;
     height: 50px;
     padding: 0 5px;
@@ -95,52 +177,55 @@
     align-items: center;
     justify-content: center;
   }
-
+  .flex-grow-1 {
+    height: 200px ;
+  }
+  
   .texts {
     padding-left: 0;
     flex-direction: column;
     width: 100%;
   }
-
+  
   .btnfridge {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 100%;
   }
-
+  
   .compare {
     margin-left: 0 !important;
     margin-top: 10px;
     font-size: smaller;
   }
-
+  
   .shadow-sm {
     width: 100%;
     margin: 0 !important;
     max-width: 100%;
     border-radius: 6px;
   }
-
+  
   .newCard {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 !important;
   }
-
+  
   .wishlist-btn {
     width: 35px;
     height: 35px;
     right: 5px;
     top: 5px;
   }
-
+  
   .price-container {
     margin-top: 0.5rem;
     width: 100%;
   }
-
+  
   /* Better image display on mobile */
   .innercarrd > div:first-child {
     padding: 1rem 0;
@@ -160,13 +245,12 @@
   .innercarrd > div:first-child img {
     max-width: 150px;
   }
-
+  
   h5 {
     font-size: 1rem;
   }
-
-  .addCartbtn,
-  .buyNowbtn {
+  
+  .addCartbtn, .buyNowbtn {
     font-size: 0.8rem;
   }
 }
@@ -176,19 +260,18 @@
   .innercarrd {
     flex-direction: row !important;
   }
-
+  
   .innercarrd > div:first-child {
     width: 160px;
     padding: 0.5rem;
   }
-
+  
   .btnfridge {
     flex-direction: row;
     flex-wrap: wrap;
   }
-
-  .addCartbtn,
-  .buyNowbtn {
+  
+  .addCartbtn, .buyNowbtn {
     width: auto;
     flex: 1;
   }
@@ -196,15 +279,14 @@
 
 /* Fix for desktop larger screens */
 @media (min-width: 992px) {
-  .addCartbtn,
-  .buyNowbtn {
+  .addCartbtn, .buyNowbtn {
     width: auto;
   }
-
+  
   .compare {
     margin-left: 1rem !important;
   }
-
+  
   .innercarrd > div:first-child {
     width: 300px;
   }
