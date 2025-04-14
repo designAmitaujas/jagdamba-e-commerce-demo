@@ -358,6 +358,14 @@
   text-decoration-line: none;
 }
 
+.display-6{
+  padding-left: 40px;
+}
+
+.text-uppercase{
+  padding-left: 20px;
+}
+
 /* Responsive Styles */
 @media (max-width: 1400px) {
   #new {
@@ -506,7 +514,7 @@
   #new {
     min-height: 20vh;
   }
-
+ 
   #new .sCard {
     width: 140px;
     height: 190px;

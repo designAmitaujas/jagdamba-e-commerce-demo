@@ -32,7 +32,7 @@ const Home = () => {
       <Header />
       {/* <Navcard /> */}
 
-      <div className="container-fluid " style={{ marginTop: "219px" }}>
+      <div className="container-fluid" style={{ marginTop: "219px" }}>
         <>
           <Carousel
             showThumbs={false}
