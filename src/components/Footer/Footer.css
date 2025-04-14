@@ -1,13 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   margin: 0px;
   padding: 0px;
 }
-/* body, html {
+body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden; 
-} */
+}
 
 .footer-section {
   background: #33446b;
@@ -279,46 +285,18 @@ ul {
 }
 
 @media (max-width: 576px) {
-  .footer-cta {
-    padding: 8px 0;
+  /* Add these */
+  .footer-widget {
+    padding-right: 15px !important;
   }
-
-  .single-cta i {
-    font-size: 20px;
-  }
-
-  .cta-text h4 {
-    font-size: 14px;
-  }
-
+  
   .footer-content {
-    padding: 15px 0;
+    padding: 15px 10px !important;
   }
 
-  .footer-logo {
-    margin-bottom: 20px;
-  }
-
-  .footer-logo img {
-    max-width: 150px;
-  }
-
-  .footer-text p {
-    font-size: 12px;
-    line-height: 24px;
-  }
-
-  .footer-social-icon span {
-    font-size: 16px;
-    margin: -2px;
-  }
-
-  .footer-menu li {
-    margin-left: 10px;
-  }
-
-  .footer-menu li a {
-    font-size: 12px;
+  /* Update existing rule */
+  .img-container .footerLogo {
+    margin-left: 0 !important;
   }
 }
 
@@ -402,7 +380,7 @@ ul {
   }
 
   .footer-social-icon {
-    margin-left: -8px !important;
+    margin-left: 2px !important;
   }
 
   .footer-menu li {
@@ -414,6 +392,7 @@ ul {
   }
 
   .img-container .footerLogo {
-    margin-left: -12px !important;
+    margin-left: 0px !important;
   }
+ 
 }
