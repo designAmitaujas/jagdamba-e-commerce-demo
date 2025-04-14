@@ -340,7 +340,7 @@ const FridgeList = () => {
                     <div
                       className="p-3 d-flex justify-content-center"
                       style={{ cursor: "pointer" }}
-                      onClick={() => navigate("/productdetail")}
+                      onClick={() => navigate("/detail")}
                     >
                       <div className="position-relative text-center">
                         <img
@@ -380,7 +380,7 @@ const FridgeList = () => {
 
                     <div
                       className="flex-grow-1 p-3 p-md-4"
-                      onClick={() => navigate("/productdetail")}
+                      onClick={() => navigate("/detail")}
                       style={{ cursor: "pointer" }}
                     >
                       <div className="d-flex flex-column flex-md-row justify-content-between align-items-start texts">
