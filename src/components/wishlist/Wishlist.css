@@ -131,3 +131,5 @@ body {
   display: inline-block;
   text-align: Center;
 }
+@media (min-width: 320px) and (max-width: 480px) {
+}

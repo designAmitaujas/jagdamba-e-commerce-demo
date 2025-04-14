@@ -308,3 +308,17 @@
     margin-bottom: 2vh;
   }
 }
+@media (max-width: 320px) {
+  .cartContainer {
+    margin-top: 60px;
+
+    padding-top: 115px;
+  }
+
+  .cartcard {
+    margin: 0;
+  }
+  .back-to-shop {
+    margin-top: 0;
+  }
+}
