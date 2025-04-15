@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../Header"
+import Header from "../Header";
 
 import "../Order/myorders.css";
-import Footer from "../Footer/Footer"
+import Footer from "../Footer/Footer";
 
 import {
   Card,
@@ -19,18 +19,15 @@ import {
 
 export default function OrderDetails3() {
   return (
-    <div >
+    <div>
       <Header />
 
       <section
         className="h-100 gradient-custom"
-        style={{ backgroundColor: "#eee"}}
+        style={{ backgroundColor: "#eee" }}
       >
         {/* <Container className="py-5 h-100"> */}
-        <Row
-          className="justify-content-center align-items-center  "
-          style={{ width: "100%" }}
-        >
+        <Row className="justify-content-center align-items-center  ">
           <Col lg="10" xl="8">
             <Card
               style={{
@@ -63,7 +60,7 @@ export default function OrderDetails3() {
                         <img
                           src="/src/assets/images/tv.png"
                           alt="Tv"
-                          style={{ width: "140px", height: "140px",  }}
+                          style={{ width: "140px", height: "140px" }}
                         />
                       </Col>
                       <Col
@@ -121,7 +118,7 @@ export default function OrderDetails3() {
                         <img
                           src="/src/assets/images/mixer.png"
                           alt="mixer"
-                          style={{ width: "140px", height: "140px",  }}
+                          style={{ width: "140px", height: "140px" }}
                         />
                       </Col>
                       <Col

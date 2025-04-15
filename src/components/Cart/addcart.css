@@ -310,7 +310,7 @@
 }
 @media (max-width: 320px) {
   .cartContainer {
-    margin-top: 60px;
+    margin-top: 20px;
 
     padding-top: 115px;
   }

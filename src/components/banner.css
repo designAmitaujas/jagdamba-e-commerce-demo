@@ -150,115 +150,6 @@
   height: 100%; /* Ensure the image container fills the card */
 }
 
-/* *{
-  margin:0;
-  padding:0;
-  font-family:'Montserrat';
-}
-#new{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:45vh;
-  background:#E1E9F4;
-}
-#new .phone{
-  height:150px;
-  width:auto;
-}
-#new .card{
-  position:relative;
-  width:250px;
-  height:300px;
-  background:#191919;
-  border-radius:20px;
-  overflow:hidden;
-}
-#new .card::before{
-  content:"";
-  position:absolute;
-  top:-50%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(rgb(207, 214, 230), rgb(231, 239, 249));
-  transform:skewY(345deg);
-  transition:0.5s;
-}
-#new .card:hover::before{
-  top:-70%;
-  transform:skewY(390deg);
-}
-#new .card::after{
-  content:" Apple tv 4k";
-  position:absolute;
-  bottom:0;
-  left:0;
-  font-weight:600;
-  font-size:4em;
-  color:rgba(0,0,0,0.1);
-}
-
-#new .card .price::after{
-  display: block;
-}
-
-#new .card .img-container{
-  position:relative;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding-top:20px;
-  z-index:1;
-}
-#new .card .container{
-  position:relative;
-  padding:20px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  z-index:2;
-}
-
-
-#new .card .container h1{
-  font-size:13px;
-  font-family:'Montserrat';
-  color:#f5f5f5;
-  font-weight:500;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-#new .card .container .price{
-  font-size:16px;
-  color:white;
-  font-weight:700;
-  letter-spacing:1px;
-}
-#new .card .container .buy{
-  position:relative;
-  top:200px;
-  opacity:0;
-  padding:10px 30px;
-  margin-top:0px;
-  color:#000000;
-  text-decoration:none;
-  background:linear-gradient(rgb(207, 214, 230), rgb(231, 239, 249));
-  border-radius:30px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  transition:0.5s;
-  height: 40px;
- font-size: small;
-
-}
-#new .card:hover .container .buy{
-  top:0;
-  opacity:1;
-}
- */
-
 .card-img {
   width: 200px;
   height: 200px;
@@ -516,12 +407,12 @@
   }
 
   #new .sCard {
-    width: 140px;
-    height: 190px;
+    width: 190px;
+    height: 290px;
   }
 
   #new .phone {
-    height: 80px;
+    height: 150px;
   }
 
   .heroSwiper .swiper-slide img {

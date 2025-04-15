@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Header.css";
+import "./Home.css";
 import * as Icon from "react-bootstrap-icons";
 import Navcard from "./Navcard";
 // Import Swiper React components
@@ -32,7 +33,7 @@ const Home = () => {
       <Header />
       {/* <Navcard /> */}
 
-      <div className="container-fluid" style={{ marginTop: "219px" }}>
+      <div className="container-fluid1" style={{ marginTop: "219px" }}>
         <>
           <Carousel
             showThumbs={false}
