@@ -135,7 +135,7 @@ body, html {
 .footer-widget ul li {
   width: 50%;
   margin-bottom: 12px;
-  display: inline-block; /* Optional, but works well with flexbox */
+  display: inline-block; 
 }
 .footer-widget ul li a:hover {
   color: #ff5e14;
@@ -199,7 +199,7 @@ body, html {
   transition: color 0.3s ease;
 }
 
-/* Responsive Styles */
+
 @media (max-width: 1200px) {
   .footer-content {
     padding: 30px 0;
@@ -217,70 +217,106 @@ body, html {
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 767.98px) {
   .footer-cta {
-    padding: 15px 0;
+    text-align: center;
+  }
+
+  .single-cta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .single-cta i {
-    font-size: 25px;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
-  .cta-text h4 {
-    font-size: 18px;
+  .footer-content .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .footer-content {
-    padding: 25px 0;
+  .col-xl-4,
+  .col-lg-4,
+  .col-md-6 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px; /* Add some spacing between columns */
+  }
+
+  .footer-widget {
+    text-align: center;
+  }
+
+  .footer-widget-heading {
+    text-align: center;
+  }
+
+  .footer-widget-heading h3::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-widget ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-widget ul li {
     width: 100%;
-  }
-
-  .footer-social-icon span {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-cta {
-    padding: 10px 0;
-  }
-
-  .single-cta {
     margin-bottom: 10px;
   }
 
-  .single-cta i {
-    font-size: 22px;
+  .footer-social-icon {
+    text-align: center !important;
+    margin-left: 0 !important;
   }
 
-  .cta-text h4 {
-    font-size: 16px;
+  .copyright-area .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
-  .footer-content {
-    padding: 20px 0;
+  .footer-menu {
+    text-align: center !important;
   }
 
+  .footer-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-menu ul li {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .img-container {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 400px) {
+  
   .footer-widget-heading h3 {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
   }
 
-  .footer-social-icon i {
-    height: 30px;
-    width: 30px;
-    line-height: 28px;
+  .footer-text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
-  .subscribe-form input {
-    padding: 10px 20px;
-  }
-
-  .subscribe-form button {
-    padding: 10px 15px;
+  .footer-menu li a {
+    font-size: 0.85rem;
   }
 }
 

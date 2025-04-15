@@ -1,3 +1,15 @@
+// <<<<<<< HEAD
+// import React from 'react';
+// import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+// import { Heart, ShoppingCart, Trash2 } from 'lucide-react';
+// import Header from '../Header';
+// import Footer from '../Footer/Footer';
+// import { useWishlist } from '../../context/WishlistContext';
+// import { useCart } from '../../context/CartContext';
+// import { Link } from 'react-router-dom';
+// import './Wishlist.css'; // Assuming you have some styles for the wishlist
+
+
 import React from "react";
 import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import { Heart, ShoppingCart, Trash2 } from "lucide-react";
@@ -7,6 +19,7 @@ import { useWishlist } from "../../context/WishlistContext";
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import "../wishlist/Wishlist.css";
+
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
