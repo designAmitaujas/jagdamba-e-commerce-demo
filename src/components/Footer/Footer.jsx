@@ -43,7 +43,10 @@ const Footer = () => {
                   />
                 </div>
 
-                <div className="footer-social-icon" style={{ marginLeft: "55px" }}>
+                <div
+                  className="footer-social-icon"
+                  style={{ marginLeft: "55px" }}
+                >
                   <span className="mb-3" style={{ marginTop: "40px" }}>
                     Follow us
                   </span>
@@ -65,13 +68,24 @@ const Footer = () => {
                   <h3>Useful Links</h3>
                 </div>
                 <ul>
-                  <li><a href="/Home">Home</a></li>
-                  <li><a href="/about">about</a></li>
-                  <li><a href="#">Product</a></li>
-                  <li><a href="/contactus">Contact</a></li>
+                  <li>
+                    <a href="/Home">Home</a>
+                  </li>
+                  <li>
+                    <a href="/about">about</a>
+                  </li>
+                  <li>
+                    <a href="#">Product</a>
+                  </li>
+                  <li>
+                    <a href="/contactus">Contact</a>
+                  </li>
                 </ul>
               </div>
-              <div className="footer-widget-heading" style={{ marginTop: "10px" }}>
+              <div
+                className="footer-widget-heading"
+                style={{ marginTop: "10px" }}
+              >
                 <h3>Mail</h3>
               </div>
               <div className="footer-text mb-25">
@@ -79,7 +93,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
-              <div className="footer-widget" >
+              <div className="footer-widget">
                 <div className="footer-widget-heading">
                   <h3>Find us</h3>
                 </div>
@@ -89,7 +103,10 @@ const Footer = () => {
                     Showroom, Vidyutnagar Colony, IOC Nagar, Akota, Vadodara,
                     Gujarat 390015
                   </p>
-                  <div className="footer-widget-heading" style={{ marginTop: "20px" }}>
+                  <div
+                    className="footer-widget-heading"
+                    style={{ marginTop: "20px" }}
+                  >
                     <h3>Contact Us</h3>
                   </div>
                   <div className="footer-text mb-25">
@@ -115,11 +132,19 @@ const Footer = () => {
             <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right pt-3">
               <div className="footer-menu">
                 <ul>
-                  <li><a href="#">Term Of Use</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Refund Policy</a></li>
+                  <li>
+                    <a href="#">Term Of Use</a>
+                  </li>
+                  <li>
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="#">Refund Policy</a>
+                  </li>
                   {/* <li><a href="#">Cookie Policy</a></li> */}
-                  <li><a href="#">Payment Policy</a></li>
+                  <li>
+                    <a href="#">Payment Policy</a>
+                  </li>
                 </ul>
               </div>
             </div>
