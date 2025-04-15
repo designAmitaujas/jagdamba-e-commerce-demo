@@ -669,8 +669,8 @@
     object-fit: cover !important;
   }
 
-  .container-fluid {
+  /* .container-fluid {
     margin-top: 0 !important;
     padding: 0;
-  }
+  } */
 }

@@ -537,11 +537,10 @@
     font-size: 10px;
   }
   .card {
-<<<<<<< HEAD
-    /* height: 145px; */
-=======
+
+
     /* height: 460px; */
->>>>>>> 1aada30d01a24c5c8d9cd56d5d45ed9bd2a9be6f
+
     max-width: none;
   }
 }
