@@ -91,6 +91,9 @@
   .innercarrd {
     flex-direction: column !important;
   }
+  .fcontainer {
+    margin-top: 100px !important;
+  }
 
   .innercarrd > div:first-child {
     width: 100%;
@@ -137,6 +140,9 @@
 @media (min-width: 481px) and (max-width: 767px) {
   .innercarrd {
     flex-direction: column !important;
+  }
+  .fcontainer {
+    margin-top: 100px !important;
   }
 
   .innercarrd > div:first-child {
@@ -202,6 +208,9 @@
   .container {
     padding-right: 8px !important;
     padding-left: 8px !important;
+  }
+  .fcontainer {
+    margin-top: 100px !important;
   }
 
   .newCard {
@@ -319,9 +328,9 @@
 
 /* Very small mobile phones */
 @media (max-width: 359px) {
-  .innercarrd > div:first-child img {
+  /* .innercarrd > div:first-child img {
     max-width: 130px;
-  }
+  } */
 
   h5 {
     font-size: 0.9rem;
@@ -353,7 +362,7 @@
   }
 
   .innercarrd > div:first-child {
-    width: 150px;
+    /* width: 150px; */
     padding: 0.5rem;
   }
 

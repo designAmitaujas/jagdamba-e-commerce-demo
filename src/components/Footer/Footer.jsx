@@ -88,7 +88,7 @@ const Footer = () => {
               >
                 <h3>Mail</h3>
               </div>
-              <div className="footer-text mb-25">
+              <div className="footer-text1 mb-25" style={{ color: "white" }}>
                 <p>info@jagdambasales.com</p>
               </div>
             </div>

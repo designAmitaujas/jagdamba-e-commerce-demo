@@ -9,7 +9,6 @@
 // import { Link } from 'react-router-dom';
 // import './Wishlist.css'; // Assuming you have some styles for the wishlist
 
-
 import React from "react";
 import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
 import { Heart, ShoppingCart, Trash2 } from "lucide-react";
@@ -33,7 +32,7 @@ const Wishlist = () => {
     <div>
       <Header />
 
-      <Container fluid className="py-4" style={{ marginTop: "200px" }}>
+      <Container fluid className="py-4 wishlist1">
         <Row>
           <Col>
             <div className="d-flex justify-content-between align-items-center mb-4">
@@ -61,7 +60,7 @@ const Wishlist = () => {
                             src={item.image}
                             alt={item.name}
                             className="w-200 h-200 px-5 py-2 object-fit-contain"
-                            style={{ maxHeight: "200px", width: "auto" }}
+                            // style={{ maxHeight: "200px", width: "auto" }}
                           />
                           <Button
                             variant="light"

@@ -598,9 +598,9 @@
   .e-navbar-brand img {
     max-width: 120px;
   }
-  .card-img-top {
+  /* .card-img-top {
     height: 140px !important;
-  }
+  } */
   .e-navbar-actions {
     gap: 0 15px;
   }

@@ -13,3 +13,33 @@
     rgba(246, 243, 255, 1)
   );
 }
+
+/* @media (min-width: 320px) and (max-width: 480px) {
+  .delivery {
+    margin-left: 35px;
+  }
+  .free {
+    margin-left: 20px;
+  }
+} */
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .free {
+    margin-top: -36px;
+    padding-left: -8px;
+    text-align: -webkit-right;
+  }
+  .delivery {
+    margin-left: 20px;
+  }
+}
+media (min-width:375 px) and (max-width: 425px) {
+  .free {
+    margin-top: -36px;
+    padding-left: -8px;
+    text-align: -webkit-right;
+  }
+  .delivery {
+    margin-left: 50px;
+  }
+}

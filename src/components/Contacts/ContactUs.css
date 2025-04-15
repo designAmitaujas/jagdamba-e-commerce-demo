@@ -69,7 +69,7 @@
   background-color: #3730a3;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
   .contact-form .container {
     max-width: 1140px;
   }
@@ -84,4 +84,69 @@
   background-color: rgba(243, 242, 242, 0.5);
   padding: 10px;
   border-radius: 5px;
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .contact-form {
+    padding: 3rem 1.5rem;
+  }
+
+  .overlay-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-form {
+    padding: 2rem;
+    margin-top: -8rem;
+  }
+
+  .form-content {
+    padding: 2.5rem;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  .overlay-title {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 425px) and (max-width: 620px) {
+  .contact-form {
+    padding: 2rem;
+    margin-top: -8rem;
+  }
+
+  .form-content {
+    padding: 2.5rem;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  .overlay-title {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 660px) {
+  .contact-form {
+    padding: 0.5rem;
+    margin-top: -8rem;
+  }
+
+  .form-content {
+    padding: 2.5rem;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  .overlay-title {
+    font-size: 2.5rem;
+  }
 }

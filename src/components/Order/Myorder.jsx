@@ -195,7 +195,10 @@ export default function OrderDetails3() {
                     Receipts Voucher : 18KU-62IIK
                   </p>
                   <p className="text-muted mb-0">
-                    <span className="fw-bold me-4">Delivery Charges</span> Free
+                    <div className="fw-bold me-4 delivery">
+                      Delivery Charges
+                    </div>{" "}
+                    <div className="free">Free</div>
                   </p>
                 </div>
               </CardBody>
@@ -204,7 +207,7 @@ export default function OrderDetails3() {
               <CardFooter
                 className="border-0 px-4 py-5"
                 style={{
-                  backgroundColor: "rgb(219 52 82)",
+                  backgroundColor: "#ea7e91",
                   borderBottomLeftRadius: "10px",
                   borderBottomRightRadius: "10px",
                 }}

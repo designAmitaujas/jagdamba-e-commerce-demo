@@ -1,38 +1,49 @@
-"use client"
-import { useRef, useState } from "react"
-import { Container, Row, Col, Form, Card, Badge, Button, Tabs, Tab, ListGroup } from "react-bootstrap"
-import { Star, Heart, ShoppingCart, Check, ShoppingBasket } from "lucide-react"
+"use client";
+import { useRef, useState } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Card,
+  Badge,
+  Button,
+  Tabs,
+  Tab,
+  ListGroup,
+} from "react-bootstrap";
+import { Star, Heart, ShoppingCart, Check, ShoppingBasket } from "lucide-react";
 
-import { useNavigate } from "react-router-dom"
-import InnerImageZoom from "react-inner-image-zoom"
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.css"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import { RiStarFill, RiStarHalfFill } from "@remixicon/react"
-import { Link } from "react-router-dom"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation } from "swiper/modules"
-import "swiper/css"
-import "swiper/css/navigation"
+import { useNavigate } from "react-router-dom";
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { RiStarFill, RiStarHalfFill } from "@remixicon/react";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import Header from "../Header";
 import Footer from "../Footer/Footer";
-import { useCart } from "../../context/CartContext"
-import { useWishlist } from "../../context/WishlistContext"
-import "./Productdetail.css"
+import { useCart } from "../../context/CartContext";
+import { useWishlist } from "../../context/WishlistContext";
+import "./Productdetail.css";
 
 const ProductDetail = () => {
   const [zoomImage, setZoomImage] = useState(
-    "https://rukminim2.flixcart.com/image/832/832/xif0q/refrigerator-new/u/o/u/-original-imah44cpjvehagyj.jpeg?q=90",
-  )
-  const zoomSlider = useRef(null)
-  const [ActiveSize, setActiveSize] = useState(0)
-  const [favorites, setFavorites] = useState([])
-  const navigate = useNavigate()
-  const { addToCart } = useCart()
-  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist()
-  const [quantity, setQuantity] = useState(1)
-  const [isAddedToCart, setIsAddedToCart] = useState(false)
+    "https://rukminim2.flixcart.com/image/832/832/xif0q/refrigerator-new/u/o/u/-original-imah44cpjvehagyj.jpeg?q=90"
+  );
+  const zoomSlider = useRef(null);
+  const [ActiveSize, setActiveSize] = useState(0);
+  const [favorites, setFavorites] = useState([]);
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const [quantity, setQuantity] = useState(1);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   // Sample product data
   const product = {
@@ -66,7 +77,7 @@ const ProductDetail = () => {
       { name: "Color", value: "Silver" },
       { name: "Type", value: "Single Door" },
     ],
-  }
+  };
 
   // Slider product data
   const products = [
@@ -142,11 +153,11 @@ const ProductDetail = () => {
       originalPrice: 29999,
       discount: 30,
     },
-  ]
+  ];
 
   const handleLinkClick = () => {
-    window.scrollTo(0, 0)
-  }
+    window.scrollTo(0, 0);
+  };
 
   // Responsive settings for thumbnail slider
   const settings = {
@@ -181,25 +192,25 @@ const ProductDetail = () => {
         },
       },
     ],
-  }
+  };
 
   // Function to change the main image
   const changeMainImage = (imageUrl) => {
-    setZoomImage(imageUrl)
-  }
+    setZoomImage(imageUrl);
+  };
 
   const isActive = (index) => {
-    setActiveSize(index)
-  }
+    setActiveSize(index);
+  };
 
   // Toggle favorites for related products
   const toggleFavorite = (productId) => {
     if (favorites.includes(productId)) {
-      setFavorites(favorites.filter((id) => id !== productId))
+      setFavorites(favorites.filter((id) => id !== productId));
     } else {
-      setFavorites([...favorites, productId])
+      setFavorites([...favorites, productId]);
     }
-  }
+  };
 
   const handleAddToCart = () => {
     if (!isAddedToCart) {
@@ -209,10 +220,10 @@ const ProductDetail = () => {
         price: product.price,
         image: product.image,
         quantity: quantity,
-      })
-      setIsAddedToCart(true)
+      });
+      setIsAddedToCart(true);
     }
-  }
+  };
 
   const handleBuyNow = () => {
     // Add to cart first
@@ -222,23 +233,23 @@ const ProductDetail = () => {
       price: product.price,
       image: product.image,
       quantity: quantity,
-    })
+    });
     // Navigate to checkout
-    navigate("/addcart")
-  }
+    navigate("/addcart");
+  };
 
   const handleWishlistToggle = () => {
     if (isInWishlist(product.id)) {
-      removeFromWishlist(product.id)
+      removeFromWishlist(product.id);
     } else {
       addToWishlist({
         id: product.id,
         name: product.name,
         price: product.price,
         image: product.image,
-      })
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -251,18 +262,27 @@ const ProductDetail = () => {
                 {/* Product Images */}
                 <Col lg={5} md={6} className="mb-4">
                   <div className="product-zoom-container">
-                    <InnerImageZoom zoomType="hover" zoomScale={2} src={zoomImage} className="main-product-image" />
+                    <InnerImageZoom
+                      zoomType="hover"
+                      zoomScale={2}
+                      src={zoomImage}
+                      className="main-product-image"
+                    />
                   </div>
 
                   <div className="product-thumbnails-container mt-3">
-                    <Slider {...settings} className="product-thumbnails" ref={zoomSlider}>
+                    <Slider
+                      {...settings}
+                      className="product-thumbnails"
+                      ref={zoomSlider}
+                    >
                       <div className="thumbnail-item">
                         <img
                           src="https://rukminim2.flixcart.com/image/150/150/xif0q/refrigerator-new/u/o/u/-original-imah44cpjvehagyj.jpeg?q=90"
                           className="img-fluid"
                           onClick={() =>
                             changeMainImage(
-                              "https://rukminim2.flixcart.com/image/832/832/xif0q/refrigerator-new/u/o/u/-original-imah44cpjvehagyj.jpeg?q=90",
+                              "https://rukminim2.flixcart.com/image/832/832/xif0q/refrigerator-new/u/o/u/-original-imah44cpjvehagyj.jpeg?q=90"
                             )
                           }
                           alt="Product Thumbnail"
@@ -275,7 +295,7 @@ const ProductDetail = () => {
                           className="img-fluid"
                           onClick={() =>
                             changeMainImage(
-                              "https://www.jiomart.com/images/product/original/493692272/lg-185-litre-5-star-single-door-direct-cool-refrigerator-blue-charm-gl-d201abcu-digital-o493692272-p598715567-1-202302232023.jpeg",
+                              "https://www.jiomart.com/images/product/original/493692272/lg-185-litre-5-star-single-door-direct-cool-refrigerator-blue-charm-gl-d201abcu-digital-o493692272-p598715567-1-202302232023.jpeg"
                             )
                           }
                           alt="Product Thumbnail"
@@ -288,7 +308,7 @@ const ProductDetail = () => {
                           className="img-fluid"
                           onClick={() =>
                             changeMainImage(
-                              "https://www.jiomart.com/images/product/original/493692272/lg-185-litre-5-star-single-door-direct-cool-refrigerator-blue-charm-gl-d201abcu-digital-o493692272-p598715567-2-202302232023.jpeg",
+                              "https://www.jiomart.com/images/product/original/493692272/lg-185-litre-5-star-single-door-direct-cool-refrigerator-blue-charm-gl-d201abcu-digital-o493692272-p598715567-2-202302232023.jpeg"
                             )
                           }
                           alt="Product Thumbnail"
@@ -301,7 +321,7 @@ const ProductDetail = () => {
                           className="img-fluid"
                           onClick={() =>
                             changeMainImage(
-                              "https://www.jiomart.com/images/product/original/493692272/lg-185-litre-5-star-single-door-direct-cool-refrigerator-blue-charm-gl-d201abcu-digital-o493692272-p598715567-5-202302232023.jpeg",
+                              "https://www.jiomart.com/images/product/original/493692272/lg-185-litre-5-star-single-door-direct-cool-refrigerator-blue-charm-gl-d201abcu-digital-o493692272-p598715567-5-202302232023.jpeg"
                             )
                           }
                           alt="Product Thumbnail"
@@ -316,11 +336,16 @@ const ProductDetail = () => {
                   <h1 className="product-title">{product.name}</h1>
 
                   <div className="d-flex align-items-center mb-3">
-                    <Badge bg="success" className="d-flex align-items-center me-2 px-2 py-1">
+                    <Badge
+                      bg="success"
+                      className="d-flex align-items-center me-2 px-2 py-1"
+                    >
                       <span className="me-1">{product.rating}</span>
                       <Star size={12} fill="currentColor" />
                     </Badge>
-                    <span className="text-muted">{product.reviews} Ratings & Reviews</span>
+                    <span className="text-muted">
+                      {product.reviews} Ratings & Reviews
+                    </span>
                   </div>
 
                   <div className="product-price mb-3">
@@ -329,7 +354,9 @@ const ProductDetail = () => {
                       <span className="text-muted text-decoration-line-through">
                         ₹{product.originalPrice.toLocaleString()}
                       </span>
-                      <span className="text-success ms-2">{product.discount}% off</span>
+                      <span className="text-success ms-2">
+                        {product.discount}% off
+                      </span>
                     </div>
                     <small className="text-success">Free delivery</small>
                   </div>
@@ -350,17 +377,32 @@ const ProductDetail = () => {
                     <div className="product-size d-flex flex-wrap">
                       <ul className="list list-inline mb-0">
                         <li className="list-inline-item mb-2">
-                          <a className={`btn-primary ${ActiveSize === 0 ? "active" : ""}`} onClick={() => isActive(0)}>
+                          <a
+                            className={`btn-primary ${
+                              ActiveSize === 0 ? "active" : ""
+                            }`}
+                            onClick={() => isActive(0)}
+                          >
                             185L
                           </a>
                         </li>
                         <li className="list-inline-item mb-2">
-                          <a className={`btn-primary ${ActiveSize === 1 ? "active" : ""}`} onClick={() => isActive(1)}>
+                          <a
+                            className={`btn-primary ${
+                              ActiveSize === 1 ? "active" : ""
+                            }`}
+                            onClick={() => isActive(1)}
+                          >
                             275L
                           </a>
                         </li>
                         <li className="list-inline-item mb-2">
-                          <a className={`btn-primary ${ActiveSize === 2 ? "active" : ""}`} onClick={() => isActive(2)}>
+                          <a
+                            className={`btn-primary ${
+                              ActiveSize === 2 ? "active" : ""
+                            }`}
+                            onClick={() => isActive(2)}
+                          >
                             355L
                           </a>
                         </li>
@@ -373,7 +415,10 @@ const ProductDetail = () => {
                     <h6 className="mb-2">Highlights</h6>
                     <ul className="list-unstyled">
                       {product.highlights.map((highlight, index) => (
-                        <li key={index} className="mb-1 d-flex align-items-start">
+                        <li
+                          key={index}
+                          className="mb-1 d-flex align-items-start"
+                        >
                           <Check size={16} className="text-success me-2 mt-1" />
                           {highlight}
                         </li>
@@ -383,7 +428,12 @@ const ProductDetail = () => {
 
                   {/* Action Buttons */}
                   <div className="action-buttons d-flex flex-wrap gap-2 mb-4">
-                    <Button variant="primary" className="action-btn" onClick={handleAddToCart} disabled={isAddedToCart}>
+                    <Button
+                      variant="primary"
+                      className="action-btn"
+                      onClick={handleAddToCart}
+                      disabled={isAddedToCart}
+                    >
                       {isAddedToCart ? (
                         <>
                           <Check size={20} className="me-2" />
@@ -397,7 +447,11 @@ const ProductDetail = () => {
                       )}
                     </Button>
 
-                    <Button variant="outline-primary" className="action-btn" onClick={handleBuyNow}>
+                    <Button
+                      variant="outline-primary"
+                      className="action-btn"
+                      onClick={handleBuyNow}
+                    >
                       <ShoppingBasket size={20} className="me-2" />
                       Buy Now
                     </Button>
@@ -413,42 +467,53 @@ const ProductDetail = () => {
 
                 {/* Product Details Tabs */}
                 <Col lg={12} className="mt-4">
-                  <Tabs defaultActiveKey="home" id="product-tabs" className="mb-3 product-tabs">
+                  <Tabs
+                    defaultActiveKey="home"
+                    id="product-tabs"
+                    className="mb-3 product-tabs"
+                  >
                     {/* Description Tab */}
                     <Tab eventKey="home" title="Description">
                       <div className="product-description">
                         <div className="feature-section mb-3">
                           <h5>Smart Inverter Compressor</h5>
                           <p>
-                            Unmatched performance, great savings and super silent operation; the New Smart Inverter
-                            Compressor is thoughtfully designed to provide added convenience to you.
+                            Unmatched performance, great savings and super
+                            silent operation; the New Smart Inverter Compressor
+                            is thoughtfully designed to provide added
+                            convenience to you.
                           </p>
                         </div>
 
                         <div className="feature-section mb-3">
                           <h5>MOIST 'N' FRESH</h5>
                           <p>
-                            MOIST 'N' FRESH is an innovative lattice-patterned box cover which maintains the moisture at
-                            the optimal level.
+                            MOIST 'N' FRESH is an innovative lattice-patterned
+                            box cover which maintains the moisture at the
+                            optimal level.
                           </p>
                         </div>
 
                         <div className="feature-section mb-3">
                           <h5>Solar Smart</h5>
                           <p>
-                            Solar Smart Refrigerators can work on Solar Energy, however, the Solar Panel requirement may
-                            vary from model to model and need to be checked specifically.
-                            <br /> Solar Panel is not part of our product and need to be purchased separately. This
-                            feature is applicable to all Made in India Refrigerator models having Smart Inverter
-                            Compressor.
+                            Solar Smart Refrigerators can work on Solar Energy,
+                            however, the Solar Panel requirement may vary from
+                            model to model and need to be checked specifically.
+                            <br /> Solar Panel is not part of our product and
+                            need to be purchased separately. This feature is
+                            applicable to all Made in India Refrigerator models
+                            having Smart Inverter Compressor.
                           </p>
                         </div>
 
                         <div className="feature-section mb-3">
                           <h5>Your list of wishes fulfilled</h5>
                           <p>
-                            Refrigerator that makes all your wishes come true. Presenting the new range of LG Direct
-                            Cool Refrigerators with cutting edge technology, stylish and spacious design.
+                            Refrigerator that makes all your wishes come true.
+                            Presenting the new range of LG Direct Cool
+                            Refrigerators with cutting edge technology, stylish
+                            and spacious design.
                           </p>
                         </div>
                       </div>
@@ -459,8 +524,14 @@ const ProductDetail = () => {
                       <div className="product-specifications">
                         <ListGroup variant="flush">
                           {product.specifications.map((spec, index) => (
-                            <ListGroup.Item key={index} className="px-0 py-3 d-flex flex-column flex-md-row">
-                              <div className="text-muted mb-1 mb-md-0" style={{ minWidth: "200px" }}>
+                            <ListGroup.Item
+                              key={index}
+                              className="px-0 py-3 d-flex flex-column flex-md-row"
+                            >
+                              <div
+                                className="text-muted mb-1 mb-md-0"
+                                style={{ minWidth: "200px" }}
+                              >
                                 {spec.name}
                               </div>
                               <div>{spec.value}</div>
@@ -475,36 +546,74 @@ const ProductDetail = () => {
                       <div className="product-reviews">
                         <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4">
                           <div className="text-center me-md-4 mb-3 mb-md-0">
-                            <div className="display-4 fw-bold text-success">{product.rating}</div>
+                            <div className="display-4 fw-bold text-success">
+                              {product.rating}
+                            </div>
                             <div className="d-flex justify-content-center mb-1">
                               {[...Array(5)].map((_, i) => (
                                 <Star
                                   key={i}
                                   size={16}
-                                  fill={i < Math.floor(product.rating) ? "currentColor" : "none"}
-                                  color={i < Math.floor(product.rating) ? "#198754" : "#6c757d"}
+                                  fill={
+                                    i < Math.floor(product.rating)
+                                      ? "currentColor"
+                                      : "none"
+                                  }
+                                  color={
+                                    i < Math.floor(product.rating)
+                                      ? "#198754"
+                                      : "#6c757d"
+                                  }
                                 />
                               ))}
                             </div>
-                            <div className="text-muted small">{product.reviews.toLocaleString()} ratings</div>
+                            <div className="text-muted small">
+                              {product.reviews.toLocaleString()} ratings
+                            </div>
                           </div>
 
                           <div className="flex-grow-1 w-100">
                             {[5, 4, 3, 2, 1].map((star) => (
-                              <div key={star} className="d-flex align-items-center mb-1">
+                              <div
+                                key={star}
+                                className="d-flex align-items-center mb-1"
+                              >
                                 <div style={{ width: "30px" }}>{star} ★</div>
-                                <div className="progress flex-grow-1 mx-2" style={{ height: "8px" }}>
+                                <div
+                                  className="progress flex-grow-1 mx-2"
+                                  style={{ height: "8px" }}
+                                >
                                   <div
                                     className="progress-bar bg-success"
                                     style={{
                                       width: `${
-                                        star === 5 ? 70 : star === 4 ? 20 : star === 3 ? 5 : star === 2 ? 3 : 2
+                                        star === 5
+                                          ? 70
+                                          : star === 4
+                                          ? 20
+                                          : star === 3
+                                          ? 5
+                                          : star === 2
+                                          ? 3
+                                          : 2
                                       }%`,
                                     }}
                                   ></div>
                                 </div>
-                                <div className="text-muted small" style={{ width: "40px" }}>
-                                  {star === 5 ? 70 : star === 4 ? 20 : star === 3 ? 5 : star === 2 ? 3 : 2}%
+                                <div
+                                  className="text-muted small"
+                                  style={{ width: "40px" }}
+                                >
+                                  {star === 5
+                                    ? 70
+                                    : star === 4
+                                    ? 20
+                                    : star === 3
+                                    ? 5
+                                    : star === 2
+                                    ? 3
+                                    : 2}
+                                  %
                                 </div>
                               </div>
                             ))}
@@ -543,9 +652,12 @@ const ProductDetail = () => {
                                     </div>
                                   </div>
                                   <p className="comment-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit
-                                    exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi
-                                    commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt?
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Delectus, suscipit
+                                    exercitationem accusantium obcaecati quos
+                                    voluptate nesciunt facilis itaque modi
+                                    commodi dignissimos sequi repudiandae minus
+                                    ab deleniti totam officia id incidunt?
                                   </p>
                                 </div>
                               </div>
@@ -579,9 +691,12 @@ const ProductDetail = () => {
                                     </div>
                                   </div>
                                   <p className="comment-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit
-                                    exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi
-                                    commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt?
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Delectus, suscipit
+                                    exercitationem accusantium obcaecati quos
+                                    voluptate nesciunt facilis itaque modi
+                                    commodi dignissimos sequi repudiandae minus
+                                    ab deleniti totam officia id incidunt?
                                   </p>
                                 </div>
                               </div>
@@ -615,9 +730,12 @@ const ProductDetail = () => {
                                     </div>
                                   </div>
                                   <p className="comment-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, suscipit
-                                    exercitationem accusantium obcaecati quos voluptate nesciunt facilis itaque modi
-                                    commodi dignissimos sequi repudiandae minus ab deleniti totam officia id incidunt?
+                                    Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Delectus, suscipit
+                                    exercitationem accusantium obcaecati quos
+                                    voluptate nesciunt facilis itaque modi
+                                    commodi dignissimos sequi repudiandae minus
+                                    ab deleniti totam officia id incidunt?
                                   </p>
                                 </div>
                               </div>
@@ -629,7 +747,11 @@ const ProductDetail = () => {
                               <div className="product-rate d-inline-block mb-3"></div>
                               <div className="row">
                                 <div className="col-12">
-                                  <form className="form-contact comment_form" action="#" id="commentForm">
+                                  <form
+                                    className="form-contact comment_form"
+                                    action="#"
+                                    id="commentForm"
+                                  >
                                     <div className="row">
                                       <div className="col-12 mb-3">
                                         <div className="form-group">
@@ -667,7 +789,10 @@ const ProductDetail = () => {
                                       </div>
                                     </div>
                                     <div className="form-group">
-                                      <button type="submit" className="btn btn-primary">
+                                      <button
+                                        type="submit"
+                                        className="btn btn-primary"
+                                      >
                                         Submit Review
                                       </button>
                                     </div>
@@ -720,7 +845,12 @@ const ProductDetail = () => {
                   <SwiperSlide key={product.id}>
                     <Card className="product-card border-0 h-100">
                       <div className="position-relative">
-                        <Card.Img variant="top" src={product.image} alt={product.name} className="product-image p-3" />
+                        <Card.Img
+                          variant="top"
+                          src={product.image}
+                          alt={product.name}
+                          className="product-image p-3"
+                        />
 
                         <Button
                           className="position-absolute top-0 end-0 p-2 text-secondary favorite-btn"
@@ -728,30 +858,51 @@ const ProductDetail = () => {
                         >
                           <Heart
                             size={22}
-                            fill={favorites.includes(product.id) ? "#dc3545" : "none"}
-                            color={favorites.includes(product.id) ? "#dc3545" : "#6c757d"}
+                            fill={
+                              favorites.includes(product.id)
+                                ? "#dc3545"
+                                : "none"
+                            }
+                            color={
+                              favorites.includes(product.id)
+                                ? "#dc3545"
+                                : "#6c757d"
+                            }
                           />
                         </Button>
                       </div>
 
                       <Card.Body className="pt-0 pb-3 px-3">
-                        <Card.Title className="product-title mb-1 text-dark">{product.name}</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted small">{product.variant}</Card.Subtitle>
+                        <Card.Title className="product-title mb-1 text-dark">
+                          {product.name}
+                        </Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted small">
+                          {product.variant}
+                        </Card.Subtitle>
 
                         <div className="d-flex align-items-center mb-2">
-                          <Badge bg="success" className="d-flex align-items-center me-2 px-2 py-1">
+                          <Badge
+                            bg="success"
+                            className="d-flex align-items-center me-2 px-2 py-1"
+                          >
                             <span className="me-1">{product.rating}</span>
                             <Star size={12} fill="currentColor" />
                           </Badge>
-                          <span className="text-muted small">({product.reviews.toLocaleString()})</span>
+                          <span className="text-muted small">
+                            ({product.reviews.toLocaleString()})
+                          </span>
                         </div>
 
                         <div>
-                          <span className="fw-bold fs-5">₹{product.price.toLocaleString()}</span>
+                          <span className="fw-bold fs-5">
+                            ₹{product.price.toLocaleString()}
+                          </span>
                           <span className="text-muted text-decoration-line-through ms-2">
                             ₹{product.originalPrice.toLocaleString()}
                           </span>
-                          <span className="text-success ms-2">{product.discount}% off</span>
+                          <span className="text-success ms-2">
+                            {product.discount}% off
+                          </span>
                         </div>
                       </Card.Body>
                     </Card>
@@ -767,7 +918,7 @@ const ProductDetail = () => {
       </section>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default ProductDetail;

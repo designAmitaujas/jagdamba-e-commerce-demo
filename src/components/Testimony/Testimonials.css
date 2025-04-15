@@ -1,12 +1,19 @@
 .read-more-link {
-    color: blue !important;
+  color: blue !important;
+}
+
+.read-more-link:visited {
+  color: blue !important;
+}
+
+.read-more-link:hover {
+  color: darkblue !important;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    padding-top: 0 !important;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
   }
-  
-  .read-more-link:visited {
-    color: blue !important;
-  }
-  
-  .read-more-link:hover {
-    color: darkblue !important;
-  }
-  
+}

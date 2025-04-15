@@ -102,7 +102,7 @@ const FridgeList = () => {
 
       <Container
         fluid
-        className="py-4"
+        className="fcontainer py-4"
         style={{
           marginTop: "200px",
           paddingRight: "15px",
@@ -367,7 +367,7 @@ const FridgeList = () => {
                             color: isInWishlist(product.id) ? "red" : "inherit",
                             border: "none",
                             backgroundColor: "white",
-                              marginRight: "-48px",
+                            marginRight: "-25px",
                           }}
                         >
                           <Heart

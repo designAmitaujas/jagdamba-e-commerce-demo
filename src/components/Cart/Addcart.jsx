@@ -155,7 +155,7 @@ const Addcart = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col" style={{ paddingLeft: "75px" }}>
+                    <div className="col ">
                       <Button
                         variant="link"
                         className="text-danger p-0"
