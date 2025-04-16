@@ -167,9 +167,9 @@ const FridgeList = () => {
               <p className="text-muted">
                 Refrigerators are an essential part of the kitchen. They act as
                 storage for produce and food and keep them fresh longer. Apart
-                from<br></br> being the go-to kitchen appliance for small
+                from being the go-to kitchen appliance for small
                 families and bachelors, most single door fridges are more
-                compact and consume less<br></br> energy than larger,
+                compact and consume less energy than larger,
                 double-door fridges.
               </p>
             </div>
