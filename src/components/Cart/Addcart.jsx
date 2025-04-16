@@ -215,7 +215,7 @@ const Addcart = () => {
 
             <hr />
 
-            <Card style={{ maxWidth: "100%", height: "9rem" }}>
+            <Card style={{ maxWidth: "100%", height: "fit-content" }}>
               <Card.Body>
                 <div className="d-flex justify-content-between cartcard">
                   <Card.Title>Delivery Address</Card.Title>

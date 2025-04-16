@@ -149,7 +149,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
   .cartContainer {
     margin-top: 180px;
   }
@@ -164,7 +164,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 660px) {
   .cartContainer {
     margin-top: 160px;
   }
@@ -181,6 +181,10 @@
   .imaga {
     width: 160px;
     height: 160px;
+  }
+
+  .card-body{
+    height: auto;
   }
 }
 
