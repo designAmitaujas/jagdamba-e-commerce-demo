@@ -30,17 +30,23 @@ const Checkout = () => {
     <div>
       <Header />
 
-      <Container fluid className="py-4" style={{ marginTop: "200px" }}>
+      <Container
+        fluid
+        className="py-4 checkout1"
+        style={{ marginTop: "200px" }}
+      >
         <Row>
           <Col lg={8} md={12}>
             <h2 className="mb-4 px-3">Checkout</h2>
 
-            <Card className="mb-4 mx-3">
+            <Card className="mb-4 mx-3 ">
               <Card.Body>
                 <div className="cartTitle mb-4">
                   <Row>
                     <Col>
-                      <h4><b>Order Summary</b></h4>
+                      <h4>
+                        <b>Order Summary</b>
+                      </h4>
                     </Col>
                     <Col className="text-end text-muted">
                       {cartItems.length} items
@@ -49,7 +55,10 @@ const Checkout = () => {
                 </div>
 
                 {cartItems.map((item) => (
-                  <div key={item.id} className="row border-top border-bottom py-3 cartMain d-flex flex-wrap align-items-center">
+                  <div
+                    key={item.id}
+                    className="row border-top border-bottom py-3 cartMain d-flex flex-wrap align-items-center"
+                  >
                     <div className="col-12 col-md-4 divcolumn">
                       <div className="cart-image-container">
                         <img src={item.image} alt={item.name} className="img" />
@@ -66,22 +75,32 @@ const Checkout = () => {
                           <Button
                             variant="outline-secondary"
                             size="sm"
-                            onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                          >-</Button>
+                            onClick={() =>
+                              setQuantity(Math.max(1, quantity - 1))
+                            }
+                          >
+                            -
+                          </Button>
                           <Form.Control
                             type="number"
                             min="1"
                             max="10"
                             value={quantity}
-                            onChange={(e) => setQuantity(Number.parseInt(e.target.value) || 1)}
+                            onChange={(e) =>
+                              setQuantity(Number.parseInt(e.target.value) || 1)
+                            }
                             style={{ width: "60px" }}
                             className="text-center"
                           />
                           <Button
                             variant="outline-secondary"
                             size="sm"
-                            onClick={() => setQuantity(Math.min(10, quantity + 1))}
-                          >+</Button>
+                            onClick={() =>
+                              setQuantity(Math.min(10, quantity + 1))
+                            }
+                          >
+                            +
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -99,7 +118,10 @@ const Checkout = () => {
 
                 {cartItems.length > 0 && (
                   <div className="back-to-shop mt-3 text-center">
-                    <Button variant="link" onClick={() => navigate("/fridgelist")}>
+                    <Button
+                      variant="link"
+                      onClick={() => navigate("/fridgelist")}
+                    >
                       &leftarrow; Back to shop
                     </Button>
                   </div>
@@ -109,7 +131,10 @@ const Checkout = () => {
           </Col>
 
           <Col lg={4} md={12}>
-            <Card className="sticky-top mx-3" style={{ top: "305px" }}>
+            <Card
+              className="sticky-top mx-3"
+              style={{ top: "305px", height: "fit-content" }}
+            >
               <Card.Body>
                 <h5 className="mb-3">Price Summary</h5>
                 <div className="d-flex justify-content-between mb-2">
