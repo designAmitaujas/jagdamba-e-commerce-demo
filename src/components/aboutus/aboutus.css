@@ -322,7 +322,12 @@ h3 {
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 768px) and (min-width: 614px) {
+
+.about-us-container {
+  margin-top: 46px !important;
+}
+
   .vision-container {
     flex-direction: column;
     height: auto;
@@ -372,6 +377,255 @@ h3 {
     font-size: 1rem;
   }
 }
+
+@media (max-width: 613px) and (min-width: 425px){
+.about-us-container {
+  margin-top: 46px !important;
+  }
+
+  
+  .vision-container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .image-side,
+  .text-side {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .text-side h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-side p {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .info-section {
+    width: 80%;
+  }
+
+  .hero-section {
+    padding: 30px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+    margin-left: 0;
+    padding: 0;
+  }
+ 
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  
+}
+
+@media (max-width: 614px) and (min-width: 375px){
+
+  .aboutContent1 {
+    margin: 10px;
+  }
+
+  .whatWeOffer {
+    margin: 10px;
+  }
+
+.about-us-container {
+  margin-top: 46px !important;
+  }
+
+  .vision-container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .image-side,
+  .text-side {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .text-side h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-side p {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .info-section {
+    width: 80%;
+  }
+
+  .hero-section {
+    padding: 30px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+    margin-left: 0;
+    padding: 0;
+  }
+ 
+
+  .lead {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  .ourVision {
+    margin-left: 10px;
+  }
+
+}
+@media (max-width: 611px) and (min-width: 320px){
+  .aboutContent1 {
+    margin: 10px;
+  }
+
+  .whatWeOffer {
+    margin: 10px;
+  }
+
+.about-us-container {
+  margin-top: 46px !important;
+  }
+
+  .vision-container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .image-side,
+  .text-side {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .text-side h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-side p {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .info-section {
+    width: 80%;
+  }
+
+  .hero-section {
+    padding: 30px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+    margin-left: 8px;
+    padding: 0;
+  }
+ 
+
+  .lead {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  .ourVision {
+    margin-left: 10px;
+  }
+}
+
+
+
+
+/* @media (max-width: 992px) {
+  .vision-container {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .image-side,
+  .text-side {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .text-side h1 {
+    font-size: 1.8rem;
+  }
+
+  .text-side p {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .info-section {
+    width: 80%;
+  }
+
+  .hero-section {
+    padding: 30px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 2rem;
+    margin-left: 0;
+    padding: 0;
+  }
+ 
+
+  .lead {
+    font-size: 1rem;
+  }
+} */
 
 
 

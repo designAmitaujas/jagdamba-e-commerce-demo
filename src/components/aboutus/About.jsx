@@ -33,7 +33,7 @@ const About = () => {
                 </div>
               </div>
               <div class="col-md-6 col-sm-12 offset-md-1">
-                <div class="ms-md-2 ms-lg-5 ">
+                <div class="ms-md-2 ms-lg-5 aboutContent1 ">
                   <span class="text-muted"></span>
                   <h2 class="display-5 fw-bold">About Us</h2>
                   <p class="lead">
@@ -58,7 +58,7 @@ const About = () => {
         </section>
 
         <section className="what-we-offer">
-          <h2>What We Offer</h2>
+          <h2 className="whatWeOffer">What We Offer</h2>
           <div className="row">
             <div className="col-lg-12">
             <Swiper
@@ -127,7 +127,7 @@ const About = () => {
         </section>
         <div className="vision-container">
           <div className="text-side">
-            <h1>Our Vision</h1>
+            <h1 className="ourVision">Our Vision</h1>
             <p class="lead" style={{ fontSize: "20px" }}>
               At jagdamba, our vision is to redefine the online shopping
               experience. We aim to create a seamless, customer-focused platform

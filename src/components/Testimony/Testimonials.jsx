@@ -134,7 +134,8 @@ const Testimonials = () => {
   return (
     <div>
       <Header />
-      <Container style={{ padding: "150px 40px", marginTop: "100px" }}>
+      <Container className="Testi" >
+ 
         <h2 className="text-center  mb-4">What Our Customers Say</h2>
 
         <Form.Select
