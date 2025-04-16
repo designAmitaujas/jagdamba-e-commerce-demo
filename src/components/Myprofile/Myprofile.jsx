@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../MyProfile/myprofile.css";
-import Wishlist from "../wishlist/Wishlist";
+
 import { RiStarFill, RiStarHalfFill } from "@remixicon/react";
 import { Cart } from "react-bootstrap-icons";
 import { Heart, Star } from "lucide-react";
@@ -14,7 +14,7 @@ const ProfilePage = () => {
     joinDate: "January 15, 2022",
     profileImage: "/src/assets/images/joshen.jpg",
     orders: 24,
-    wishlist: 8,
+    // wishlist: 8,
     reviews: 15,
   });
 
@@ -87,12 +87,12 @@ const ProfilePage = () => {
             >
               <i className="fas fa-shopping-bag"></i> My Orders
             </button>
-            <button
+            {/* <button
               className={activeTab === "wishlist" ? "active" : ""}
               onClick={() => setActiveTab("wishlist")}
             >
               <i className="fas fa-heart"></i> Wishlist
-            </button>
+            </button> */}
             <button
               className={activeTab === "reviews" ? "active" : ""}
               onClick={() => setActiveTab("reviews")}
@@ -208,7 +208,7 @@ const ProfilePage = () => {
                     <span className="stat-label">Orders</span>
                   </div>
                 </div>
-                <div className="stat-card">
+                {/* <div className="stat-card">
                   <div className="stat-icon wishlist">
                     <Heart />
                   </div>
@@ -216,7 +216,7 @@ const ProfilePage = () => {
                     <span className="stat-number">{user.wishlist}</span>
                     <span className="stat-label">Wishlist</span>
                   </div>
-                </div>
+                </div> */}
                 <div className="stat-card">
                   <div className="stat-icon reviews">
                     <Star />
@@ -271,12 +271,12 @@ const ProfilePage = () => {
             </div>
           )}
 
-          {activeTab === "wishlist" && (
+          {/* {activeTab === "wishlist" && (
             <div style={{ margin: -170 }}>
              <Wishlist/>
             </div>
             
-          )}
+          )} */}
 
           {activeTab === "reviews" && (
             <div class="comment-list">

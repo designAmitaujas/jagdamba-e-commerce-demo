@@ -129,7 +129,7 @@
   display: inline-block;
   text-align: Center;
 }
-@media (max-width: 320px) {
+@media (max-width: 1440px) {
   .flex-column2 {
     flex-direction: column !important;
     margin-bottom: 300px;
@@ -137,9 +137,12 @@
   element.style {
     height: 200px;
   }
-}
-@media (min-width: 992px) and (max-width: 2560px) {
   .wishlist1 {
     margin-top: 100px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 2560px) {
+  .wishlist1 {
+    margin-top: 200px;
   }
 }
