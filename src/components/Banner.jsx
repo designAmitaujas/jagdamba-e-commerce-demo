@@ -144,7 +144,7 @@ const Banner = () => {
             <div className="card">
               <Link to="/fridgelist" onClick={handleLinkClick}>
                 <img
-                  src="/src/assets/images/tv.png"
+                  src="https://mxsonyb2c.vtexassets.com/arquivos/ids/315391-800-800?v=638720307603770000&width=800&height=800&aspect=true"
                   className="card-img-top"
                   alt="Card Image"
                 />
@@ -443,7 +443,10 @@ const Banner = () => {
 
       <div className="row">
         <div className="col-lg-12">
-          <h4 className="mt-3 p-3"> New Arrivals</h4>
+          {/* <h4 className="mt-3 p-3"> New Arrivals</h4> */}
+          <h3 className="text-uppercase border-bottom mb-4">
+          New Arrivals
+            </h3>
           <Swiper
             slidesPerView={2}
             spaceBetween={10}

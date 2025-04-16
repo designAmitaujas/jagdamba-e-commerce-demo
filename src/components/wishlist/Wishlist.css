@@ -65,9 +65,7 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
-body {
-  height: 100vh;
-}
+
 .cont {
   position: relative;
   top: 50%;

@@ -214,6 +214,25 @@ html {
   }
 }
 
+@media  (max-width:768px) and (min-width:420px){
+  .headin1 {
+    display: flex;
+  }
+
+  .footerLogo {
+    margin-left: 0 !important;
+  }
+  
+  .footer-social-icon {
+    margin-left: 280px !important;
+  }
+
+  .footer-content {
+    margin-top: 0 !important;
+  }
+
+}
+
 @media (max-width: 767.98px) {
   .footer-cta {
     text-align: center;

@@ -32,6 +32,7 @@ const Footer = () => {
                     />
                   </a>
                 </div> */}
+                <div className="headin1">
                 <div className="img-container">
                   <img
                     className="footerLogo"
@@ -59,6 +60,7 @@ const Footer = () => {
                   <a href="#">
                     <Instagram />
                   </a>
+                </div>
                 </div>
               </div>
             </div>
