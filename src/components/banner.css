@@ -327,12 +327,37 @@
   }
 
   #new .sCard {
-    width: 180px;
-    height: 230px;
-  }
+    width: 215px;
+    height: 329px;
+}
+
+#new .sCard:hover h1 {
+  opacity: 0; /* Hide the text on hover */
+}
+
+#new .sCard:hover .img-container .phone {
+  transform: scale(1.7); /* Enlarge the image */
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5); /* Center and enlarge the image */
+}
 
   #new .phone {
     height: 100px;
+    
+  }
+
+  #new .phone:after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    z-index: -1; /* Ensure the overlay is behind the image */
   }
 
   .heroSwiper .swiper-slide img {
@@ -365,6 +390,19 @@
     min-height: 25vh;
     padding: 5px;
   }
+
+  #new .sCard:hover h1 {
+    opacity: 0; /* Hide the text on hover */
+  }
+  
+  #new .sCard:hover .img-container .phone {
+    transform: scale(1.7); /* Enlarge the image */
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); /* Center and enlarge the image */
+  }
+  
 
   #new .sCard {
     width: 160px;
@@ -401,11 +439,69 @@
   }
 }
 
+@media (max-width: 320px) and (min-width:614px){
+  #new {
+    min-height: 20vh;
+  }
+
+  #new .sCard:hover h1 {
+    opacity: 0; /* Hide the text on hover */
+  }
+  
+  #new .sCard:hover .img-container .phone {
+    transform: scale(1.7); /* Enlarge the image */
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.1); /* Center and enlarge the image */
+  }
+  
+  #new .sCard {
+    width: 190px;
+    height: 290px;
+  }
+
+  #new .phone {
+    height: 150px;
+  }
+
+  .heroSwiper .swiper-slide img {
+    height: 65%;
+  }
+
+  .pProduct {
+    width: 4em;
+    font-size: 0.75rem;
+  }
+
+  .pPrice {
+    font-size: 10px;
+  }
+  .card {
+    /* height: 460px; */
+
+    max-width: none;
+  }
+}
+
+
 @media (max-width: 400px) {
   #new {
     min-height: 20vh;
   }
 
+  #new .sCard:hover h1 {
+    opacity: 0; /* Hide the text on hover */
+  }
+  
+  #new .sCard:hover .img-container .phone {
+    transform: scale(1.7); /* Enlarge the image */
+    position: absolute;
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.0); /* Center and enlarge the image */
+  }
+  
   #new .sCard {
     width: 190px;
     height: 290px;
