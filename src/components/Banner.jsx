@@ -37,7 +37,7 @@ const Banner = () => {
                 </div>
 
                 <div className="container">
-                  <h1>Whirlpool 184 L </h1>
+                  <h1 className="productName">Whirlpool 184 L </h1>
                   <h3 className="price">
                     &#8377; 35,449.<small>00</small>
                   </h3>
@@ -64,7 +64,7 @@ const Banner = () => {
                 </div>
 
                 <div className="container">
-                  <h1>Samsung AR12BY4YATA Inverter Split AC</h1>
+                  <h1 className="productName">Samsung AR12BY4YATA Inverter Split AC</h1>
                   <h3 className="price">
                     &#8377; 25,449.<small>00</small>
                   </h3>
@@ -90,7 +90,7 @@ const Banner = () => {
                 </div>
 
                 <div className="container">
-                  <h1>Samsung Tv</h1>
+                  <h1 className="productName">Samsung Tv</h1>
                   <h3 className="price">
                     &#8377; 1,50,444.<small>00</small>
                   </h3>
@@ -116,7 +116,7 @@ const Banner = () => {
                 </div>
 
                 <div className="container">
-                  <h1>Washing Machine</h1>
+                  <h1 className="productName">Washing Machine</h1>
                   <h3 className="price">
                     &#8377; 25,449.<small>00</small>
                   </h3>

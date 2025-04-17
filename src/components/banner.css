@@ -260,7 +260,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 1400px) {
+@media (max-width: 1440px) {
   #new {
     padding: 15px;
   }
@@ -388,8 +388,7 @@
 
 @media (max-width: 576px) {
   #new {
-    min-height: 25vh;
-    padding: 5px;
+    min-height: 20vh;
   }
 
   #new .sCard:hover h1 {
@@ -399,43 +398,36 @@
   #new .sCard:hover .img-container .phone {
     transform: scale(1.7); /* Enlarge the image */
     position: absolute;
-    top: 200%;
+    top: 150%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.5); /* Center and enlarge the image */
+    transform: translate(-50%, -50%) scale(1); /* Center and enlarge the image */
   }
 
   #new .sCard {
-    width: 160px;
-    height: 210px;
+    width: 240px;
+    height: 324px;
   }
 
   #new .phone {
-    height: 90px;
+    height: 150px;
   }
 
   .heroSwiper .swiper-slide img {
-    height: 70%;
+    height: 65%;
   }
 
   .pProduct {
-    width: 5em;
-    font-size: 0.8rem;
+    width: 4em;
+    font-size: 0.75rem;
   }
 
   .pPrice {
-    font-size: 11px;
+    font-size: 10px;
   }
+  .card {
+    /* height: 460px; */
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    width: 30px;
-    height: 30px;
-    display: none;
-  }
-
-  .swiper-button-prev:after,
-  .swiper-button-next:after {
-    font-size: 14px;
+    max-width: none;
   }
 }
 
@@ -496,14 +488,14 @@
   #new .sCard:hover .img-container .phone {
     transform: scale(1.7); /* Enlarge the image */
     position: absolute;
-    top: 200%;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1); /* Center and enlarge the image */
   }
 
   #new .sCard {
-    width: 190px;
-    height: 290px;
+    width: 240px;
+    height: 324px;
   }
 
   #new .phone {
