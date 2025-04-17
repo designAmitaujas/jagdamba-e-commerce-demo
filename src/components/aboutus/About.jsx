@@ -6,17 +6,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-import Header from '../Header';
+import Header from "../Header";
 import Footer from "../Footer/Footer";
-
 
 const About = () => {
   return (
     <>
-      <Header/>
+      <Header />
       {/* <Navcard /> */}
 
-      <div className="about-us-container " style={{ marginTop: "150px", padding:"55px 0",width:"100%" }}>
+      <div
+        className="about-us-container "
+        style={{ marginTop: "150px", padding: "55px 0", width: "100%" }}
+      >
         <section className="hero-section ">
           <h1>Welcome to Jagdamba</h1>
           <p>Your One-Stop Shop for Electronics!</p>
@@ -58,37 +60,35 @@ const About = () => {
         </section>
 
         <section className="what-we-offer">
-          <h2 className="whatWeOffer">What We Offer</h2>
+          <h2 className="whatWeOffer px-3">What We Offer</h2>
           <div className="row">
             <div className="col-lg-12">
-            <Swiper
-  spaceBetween={20}
-  loop={true}
-  pagination={{ clickable: true }}
-  navigation={true}
-  modules={[Pagination, Navigation]}
-  className="heroSwiper"
-  breakpoints={{
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 3,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 4,
-    },
-    // when window width is >= 1024px
-    1024: {
-      slidesPerView: 6,
-    }
-  }}
->
-
-
+              <Swiper
+                spaceBetween={20}
+                loop={true}
+                pagination={{ clickable: true }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="heroSwiper"
+                breakpoints={{
+                  // when window width is >= 320px
+                  320: {
+                    slidesPerView: 2,
+                  },
+                  // when window width is >= 480px
+                  480: {
+                    slidesPerView: 3,
+                  },
+                  // when window width is >= 768px
+                  768: {
+                    slidesPerView: 4,
+                  },
+                  // when window width is >= 1024px
+                  1024: {
+                    slidesPerView: 6,
+                  },
+                }}
+              >
                 <SwiperSlide>
                   <img src="/src/assets/images/juicer.png" alt="" srcSet="" />
                 </SwiperSlide>
@@ -228,7 +228,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
