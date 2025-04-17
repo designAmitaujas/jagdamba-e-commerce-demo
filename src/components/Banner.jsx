@@ -84,15 +84,15 @@ const Banner = () => {
                 <div className="img-container">
                   <img
                     className="phone"
-                    src="/src/assets/images/ac2.png"
+                    src="/src/assets/images/tvbgr.png"
                     alt="Samsung Galaxy S23 Ultra"
                   />
                 </div>
 
                 <div className="container">
-                  <h1>Samsung Split AC</h1>
+                  <h1>Samsung Tv</h1>
                   <h3 className="price">
-                    &#8377; 25,449.<small>00</small>
+                    &#8377; 1,50,444.<small>00</small>
                   </h3>
                   <a href="/productdetail" className="buy">
                     Buy Now
@@ -110,15 +110,15 @@ const Banner = () => {
                 <div className="img-container">
                   <img
                     className="phone"
-                    src="/src/assets/images/tv3.png"
+                    src="/src/assets/images/washingbg.png"
                     alt="Samsung Galaxy S23 Ultra"
                   />
                 </div>
 
                 <div className="container">
-                  <h1>Apple TV 4K</h1>
+                  <h1>Washing Machine</h1>
                   <h3 className="price">
-                    &#8377; 1,50,444.<small>00</small>
+                    &#8377; 25,449.<small>00</small>
                   </h3>
                   <a href="/productdetail" className="buy">
                     Buy Now
@@ -193,7 +193,7 @@ const Banner = () => {
             <div className="card">
               <Link to="/fridgelist" onClick={handleLinkClick}>
                 <img
-                  src="/src/assets/images/deepfridger.png"
+                  src="/src/assets/images/deep.jpeg"
                   className="card-img-top"
                   alt="Card Image"
                 />
@@ -209,7 +209,7 @@ const Banner = () => {
             <div className="card">
               <Link to="/fridgelist" onClick={handleLinkClick}>
                 <img
-                  src="/src/assets/images/ac.png"
+                  src="/src/assets/images/ac.jpeg"
                   className="card-img-top"
                   alt="Card Image"
                 />
@@ -309,7 +309,7 @@ const Banner = () => {
             <div className="card">
               <Link to="/fridgelist" onClick={handleLinkClick}>
                 <img
-                  src="/src/assets/images/washingmachine.png"
+                  src="/src/assets/images/washingm.png"
                   className="card-img-top"
                   alt="Card Image"
                 />
@@ -361,7 +361,7 @@ const Banner = () => {
             <div className="card">
               <Link to="/fridgelist" onClick={handleLinkClick}>
                 <img
-                  src="/src/assets/images/waterp.png"
+                  src="/src/assets/images/air.jpeg"
                   className="card-img-top"
                   alt="Card Image"
                 />
@@ -444,9 +444,7 @@ const Banner = () => {
       <div className="row">
         <div className="col-lg-12">
           {/* <h4 className="mt-3 p-3"> New Arrivals</h4> */}
-          <h3 className="text-uppercase border-bottom mb-4">
-          New Arrivals
-            </h3>
+          <h3 className="text-uppercase border-bottom mb-4">New Arrivals</h3>
           <Swiper
             slidesPerView={2}
             spaceBetween={10}
