@@ -324,7 +324,9 @@ h3 {
 
 @media (max-width: 768px) and (min-width: 614px) {
 
+  
 .about-us-container {
+  padding: 58px 32px !important;
   margin-top: 46px !important;
 }
 

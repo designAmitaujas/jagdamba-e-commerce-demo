@@ -127,7 +127,7 @@ const About = () => {
         </section>
         <div className="vision-container">
           <div className="text-side">
-            <h1 className="ourVision">Our Vision</h1>
+            <h1 className="">Our Vision</h1>
             <p class="lead" style={{ fontSize: "20px" }}>
               At jagdamba, our vision is to redefine the online shopping
               experience. We aim to create a seamless, customer-focused platform
