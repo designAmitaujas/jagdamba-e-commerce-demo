@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -28,6 +28,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // required
 import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
+
+
   return (
     <>
       <Header />

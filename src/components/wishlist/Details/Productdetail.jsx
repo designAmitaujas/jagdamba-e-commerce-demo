@@ -820,7 +820,7 @@ const Productdetail = () => {
                 <Link to="/fridgeList" onClick={handleLinkClick}>
                   <Button
                     variant="primary"
-                    className="text-uppercase fw-bold"
+                    className="text-uppercase fw-bold sliderbtn"
                     href="/products/motorola"
                   >
                     VIEW ALL

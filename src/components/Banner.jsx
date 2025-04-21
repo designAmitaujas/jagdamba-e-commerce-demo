@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,6 +14,40 @@ const handleLinkClick = () => {
   window.scrollTo(0, 0); // Scroll to the top
 };
 const Banner = () => {
+
+  
+    const [category, setCategory] = React.useState([]);
+    const [key,setKey] = React.useState(Math.random());
+  
+  
+  
+    useEffect(() => {
+  
+      (
+        async () => {
+          await fetch("https://admin-jagdamba.amitaujas.com/api/productCategory", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+  
+              setCategory(data.data)
+              setKey(Math.random())
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+          
+        }
+      )()
+  
+    },[])
+
   return (
     <section className="hero mt-2 bg-light  pb-5 shadow-sm">
       <div className="container-fluid d-flex justify-content-center align-items-center">
@@ -139,8 +173,38 @@ const Banner = () => {
           </div>
         </div>
 
-        <Row className="mb-3">
-          <Col xs={6} md={4} lg={2} className="mb-3">
+
+
+        <Row className="mb-3" key={key}>
+
+
+
+{
+  category.map((item) => (
+    <Col xs={6} md={4} lg={2} className="mb-3" key={item.id}>
+      <div className="card">
+        <Link to="/fridgelist" onClick={handleLinkClick}>
+          <img
+            src={`https://admin-jagdamba.amitaujas.com/uploads/${item.productCategoryImage}`}
+            className="card-img-top"
+            alt="Card Image"
+          />
+        </Link>
+      </div>
+      <div className="d-flex flex-column p-3">
+        <h5 className="card-title d-flex justify-content-center">
+          {item.productCategoryName}
+        </h5>
+      </div>
+    </Col>
+  ))
+}
+
+         
+        </Row>
+
+        {/* <Row className="mb-3">
+        <Col xs={6} md={4} lg={2} className="mb-3">
             <div className="card">
               <Link to="/fridgelist" onClick={handleLinkClick}>
                 <img
@@ -438,7 +502,7 @@ const Banner = () => {
               </h5>
             </div>
           </Col>
-        </Row>
+        </Row> */}
       </div>
 
       <div className="row">

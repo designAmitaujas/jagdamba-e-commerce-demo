@@ -123,7 +123,7 @@ const Footer = () => {
       <div className="copyright-area">
         <div className="">
           <div className="row">
-            <div className="col-xl-6 col-lg-6 text-center pt-3">
+            <div className="col-xl-6 col-lg-6 text-center p-3">
               <div className="copyright-text">
                 <p>
                   Copyright &copy; 2025, All Rights Reserved by Jagdamba Sales
