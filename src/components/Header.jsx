@@ -29,6 +29,32 @@ const Header = () => {
   const { cartCount } = useCart();
   const { wishlistCount } = useWishlist();
 
+  const [category, setCategory] = React.useState([]);
+  const [key, setKey] = React.useState(Math.random());
+
+  useEffect(() => {
+    (async () => {
+      await fetch(
+        "https://actually-bent-deaf-hebrew.trycloudflare.com/api/productCategory",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setCategory(data.data);
+          setKey(Math.random());
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    })();
+  }, []);
+
   const toggleSearch = () => {
     setIsSearchExpanded(!isSearchExpanded);
     if (!isSearchExpanded && searchInputRef.current) {
@@ -216,74 +242,15 @@ const Header = () => {
                     className="e-mega-col"
                     style={{ backgroundColor: "white" }}
                   >
-                    <div className="e-category-header">Kitchen Appliances</div>
-                    <a className="e-category-item" href="/fridgeList">
-                      Microwave Ovens
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Hand Blenders
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Mixer Grinders
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Juicers & Extractors
-                    </a>
-                    <a className="e-category-item" href="//fridgeList">
-                      Induction Cooktops
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Food Processors
-                    </a>
+                    {category?.map((item) => (
+                      <>
+                        <a className="e-category-item" href="/fridgeList">
+                          {item?.productCategoryName}
+                        </a>
+                      </>
+                    ))}
                   </div>
-                  <div
-                    className="e-mega-col"
-                    style={{ backgroundColor: "white" }}
-                  >
-                    <div className="e-category-header">Cooling Solutions</div>
-                    <a className="e-category-item" href="/fridgeList">
-                      Air Conditioners
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Water Coolers
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Deep Freezers
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Refrigerators
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Air Coolers
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Tower Fans
-                    </a>
-                  </div>
-                  <div
-                    className="e-mega-col"
-                    style={{ backgroundColor: "white" }}
-                  >
-                    <div className="e-category-header">Home Essentials</div>
-                    <a className="e-category-item" href="/fridgeList">
-                      Water Purifiers
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Geysers
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Washing Machines
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Atta Chakki
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Vacuum Cleaners
-                    </a>
-                    <a className="e-category-item" href="/fridgeList">
-                      Irons
-                    </a>
-                  </div>
+
                   <div
                     className="e-mega-col"
                     style={{ backgroundColor: "white" }}

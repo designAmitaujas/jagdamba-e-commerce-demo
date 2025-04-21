@@ -14,39 +14,33 @@ const handleLinkClick = () => {
   window.scrollTo(0, 0); // Scroll to the top
 };
 const Banner = () => {
+  const [category, setCategory] = React.useState([]);
+  const [key, setKey] = React.useState(Math.random());
 
-  
-    const [category, setCategory] = React.useState([]);
-    const [key,setKey] = React.useState(Math.random());
-  
-  
-  
-    useEffect(() => {
-  
-      (
-        async () => {
-          await fetch("https://admin-jagdamba.amitaujas.com/api/productCategory", {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-          })
-            .then((response) => response.json())
-            .then((data) => {
-              console.log(data);
-  
-              setCategory(data.data)
-              setKey(Math.random())
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-            });
-          
+  useEffect(() => {
+    (async () => {
+      await fetch(
+        "https://actually-bent-deaf-hebrew.trycloudflare.com/api/productCategory",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
         }
-      )()
-  
-    },[])
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          setCategory(data.data);
+          setKey(Math.random());
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    })();
+  }, []);
 
   return (
     <section className="hero mt-2 bg-light  pb-5 shadow-sm">
@@ -98,7 +92,9 @@ const Banner = () => {
                 </div>
 
                 <div className="container">
-                  <h1 className="productName">Samsung AR12BY4YATA Inverter Split AC</h1>
+                  <h1 className="productName">
+                    Samsung AR12BY4YATA Inverter Split AC
+                  </h1>
                   <h3 className="price">
                     &#8377; 25,449.<small>00</small>
                   </h3>
@@ -173,336 +169,26 @@ const Banner = () => {
           </div>
         </div>
 
-
-
         <Row className="mb-3" key={key}>
-
-
-
-{
-  category.map((item) => (
-    <Col xs={6} md={4} lg={2} className="mb-3" key={item.id}>
-      <div className="card">
-        <Link to="/fridgelist" onClick={handleLinkClick}>
-          <img
-            src={`https://admin-jagdamba.amitaujas.com/uploads/${item.productCategoryImage}`}
-            className="card-img-top"
-            alt="Card Image"
-          />
-        </Link>
-      </div>
-      <div className="d-flex flex-column p-3">
-        <h5 className="card-title d-flex justify-content-center">
-          {item.productCategoryName}
-        </h5>
-      </div>
-    </Col>
-  ))
-}
-
-         
+          {category.map((item) => (
+            <Col xs={6} md={4} lg={2} className="mb-3" key={item.id}>
+              <div className="card">
+                <Link to="/fridgelist" onClick={handleLinkClick}>
+                  <img
+                    src={`https://actually-bent-deaf-hebrew.trycloudflare.com/uploads/${item.productCategoryImage}`}
+                    className="card-img-top"
+                    alt="Card Image"
+                  />
+                </Link>
+              </div>
+              <div className="d-flex flex-column p-3">
+                <h5 className="card-title d-flex justify-content-center">
+                  {item.productCategoryName}
+                </h5>
+              </div>
+            </Col>
+          ))}
         </Row>
-
-        {/* <Row className="mb-3">
-        <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="https://mxsonyb2c.vtexassets.com/arquivos/ids/315391-800-800?v=638720307603770000&width=800&height=800&aspect=true"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Television
-              </h5>
-            </div>
-          </Col>
-
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/fridge2.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Refrigerator
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/atta.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Atta Chakki
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/deep.jpeg"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Deep Freezer
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/ac.jpeg"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Air Conditioner
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/cac.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Commercial AC
-              </h5>
-            </div>
-          </Col>
-        </Row>
-
-        <Row className="mb-3">
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/microwave.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Microwave
-              </h5>
-            </div>
-          </Col>
-
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/handblender.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Handblender
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/geyser.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Geyser
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/waterd.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Water Dispenser
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/washingm.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Washing Machine
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/erasebg-transformed.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Tower AC
-              </h5>
-            </div>
-          </Col>
-        </Row>
-
-        <Row className="mb-3">
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/winAC.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Window AC
-              </h5>
-            </div>
-          </Col>
-
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/air.jpeg"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Water Purifier
-              </h5>
-            </div>
-          </Col>
-
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/cooler.webp"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Air cooler
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/watercooler.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Water cooler
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/mixer.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Mixer
-              </h5>
-            </div>
-          </Col>
-          <Col xs={6} md={4} lg={2} className="mb-3">
-            <div className="card">
-              <Link to="/fridgelist" onClick={handleLinkClick}>
-                <img
-                  src="/src/assets/images/juicer.png"
-                  className="card-img-top"
-                  alt="Card Image"
-                />
-              </Link>
-            </div>
-            <div className="d-flex flex-column p-3">
-              <h5 className="card-title d-flex justify-content-center">
-                Juicer
-              </h5>
-            </div>
-          </Col>
-        </Row> */}
       </div>
 
       <div className="row">

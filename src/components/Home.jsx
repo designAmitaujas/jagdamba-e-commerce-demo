@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -28,7 +28,42 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // required
 import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
+  const [isFetching, setIsFetching] = useState(false);
+  const [bannerList, setBannerList] = useState([]);
 
+  useEffect(() => {
+    (async () => {
+      await fetchData();
+    })();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      setIsFetching(true);
+
+      const res = await fetch(
+        "https://actually-bent-deaf-hebrew.trycloudflare.com/api/banner",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+
+      const resp = await res.json();
+      console.log(resp);
+
+      setBannerList(resp.data?.filter((item) => item.isActive));
+
+      setIsFetching(false);
+    } catch (err) {
+      setIsFetching(false);
+
+      console.log(err);
+    }
+  };
 
   return (
     <>
@@ -49,17 +84,49 @@ const Home = () => {
             showArrows
             useKeyboardArrows
           >
-            <div>
-              <img src={banner1} alt="Banner 1" />
-            </div>
-            <div>
-              <img src={banner2} alt="Banner 2" />
-            </div>
+            {bannerList.map((banner) => (
+              <>
+                <img
+                  src={`https://actually-bent-deaf-hebrew.trycloudflare.com/uploads/${banner.bannerImage}`}
+                  alt={banner.bannerName}
+                  height={500}
+                  width={"auto"}
+                />
+              </>
+            ))}
           </Carousel>
 
           <Banner />
         </>
       </div>
+
+      {false && (
+        <div className="container-fluid1">
+          <>
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              infiniteLoop
+              autoPlay
+              interval={4000}
+              dynamicHeight={false}
+              emulateTouch
+              swipeable
+              showArrows
+              useKeyboardArrows
+            >
+              <div>
+                <img src={banner1} alt="Banner 1" />
+              </div>
+              <div>
+                <img src={banner2} alt="Banner 2" />
+              </div>
+            </Carousel>
+
+            <Banner />
+          </>
+        </div>
+      )}
       <Footer />
     </>
   );
