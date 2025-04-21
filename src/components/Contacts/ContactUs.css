@@ -99,7 +99,7 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .contact-form {
     padding: 2rem;
-    margin-top: -8rem;
+    margin-top: -3rem;
   }
 
   .form-content {
@@ -117,7 +117,7 @@
 @media (min-width: 425px) and (max-width: 620px) {
   .contact-form {
     padding: 2rem;
-    margin-top: -8rem;
+    margin-top: 0;
   }
 
   .form-content {
@@ -135,7 +135,7 @@
 @media (min-width: 320px) and (max-width: 660px) {
   .contact-form {
     padding: 0.5rem;
-    margin-top: -8rem;
+    margin-top: 0;
   }
 
   .form-content {

@@ -169,37 +169,41 @@ export default function OrderDetails3() {
                 </Card>
 
                 {/* Order Summary */}
-                <div className="d-flex justify-content-between pt-2">
-                  <p className="fw-bold mb-0">Order Details</p>
-                  <p className="text-muted mb-0">
-                    <span className="fw-bold me-4">Total</span> &#8377;85998
-                  </p>
-                </div>
+                <div className="orderDetails">
+                  <div className="d-flex justify-content-between pt-2">
+                    <p className="fw-bold mb-0">Order Details</p>
+                    <p className="text-muted mb-0">
+                      <span className="fw-bold me-4">Total</span> &#8377;85998
+                    </p>
+                  </div>
 
-                <div className="d-flex justify-content-between pt-2">
-                  <p className="text-muted mb-0">Invoice Number : 788152</p>
-                  <p className="text-muted mb-0">
-                    <span className="fw-bold me-4">Discount</span> &#8377;978
-                  </p>
-                </div>
+                  <div className="d-flex justify-content-between ">
+                    <p className="text-muted mb-0">Invoice Number : 788152</p>
+                    <p className="text-muted mb-0">
+                      <span className="fw-bold me-4">Discount</span> &#8377;978
+                    </p>
+                  </div>
 
-                <div className="d-flex justify-content-between">
-                  <p className="text-muted mb-0">Invoice Date : 2o Mar, 2025</p>
-                  <p className="text-muted mb-0">
-                    <span className="fw-bold me-4">GST 18%</span> &#8377;978
-                  </p>
-                </div>
+                  <div className="d-flex justify-content-between">
+                    <p className="text-muted mb-0">
+                      Invoice Date : 2o Mar, 2025
+                    </p>
+                    <p className="text-muted mb-0">
+                      <span className="fw-bold me-4">GST 18%</span> &#8377;978
+                    </p>
+                  </div>
 
-                <div className="d-flex justify-content-between mb-5">
-                  <p className="text-muted mb-0">
-                    Receipts Voucher : 18KU-62IIK
-                  </p>
-                  <p className="text-muted mb-0">
+                  <div className="d-flex justify-content-between mb-5">
+                    <p className="text-muted mb-0">
+                      Receipts Voucher : 18KU-62IIK
+                    </p>
+                    {/* <p className="text-muted mb-0">
                     <div className="fw-bold me-4 delivery">
                       Delivery Charges
                     </div>{" "}
                     <div className="free">Free</div>
-                  </p>
+                  </p> */}
+                  </div>
                 </div>
               </CardBody>
 

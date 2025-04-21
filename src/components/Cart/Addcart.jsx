@@ -18,8 +18,7 @@ const Addcart = () => {
     country: "India",
   });
 
-  const { cartItems, removeFromCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -39,7 +38,7 @@ const Addcart = () => {
   };
 
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0);
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
   return (
@@ -109,16 +108,15 @@ const Addcart = () => {
                       </div>
                       <div className="row p-3">₹{item.price}</div>
 
-                      {/* Quantity */}
+                      {/* Quantity - Now uses item-specific quantity */}
                       <div className="mb-4">
                         <h6 className="mb-2">Quantity</h6>
                         <div className="d-flex align-items-center gap-2">
                           <Button
                             variant="outline-secondary"
                             size="sm"
-                            onClick={() =>
-                              setQuantity(Math.max(1, quantity - 1))
-                            }
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            disabled={item.quantity <= 1}
                           >
                             -
                           </Button>
@@ -126,7 +124,7 @@ const Addcart = () => {
                             type="number"
                             min="1"
                             max="10"
-                            value={quantity}
+                            value={item.quantity}
                             onChange={(e) => {
                               const newQuantity = Number.parseInt(
                                 e.target.value,
@@ -137,7 +135,7 @@ const Addcart = () => {
                                 newQuantity >= 1 &&
                                 newQuantity <= 10
                               ) {
-                                setQuantity(newQuantity);
+                                updateQuantity(item.id, newQuantity);
                               }
                             }}
                             style={{ width: "60px" }}
@@ -146,9 +144,8 @@ const Addcart = () => {
                           <Button
                             variant="outline-secondary"
                             size="sm"
-                            onClick={() =>
-                              setQuantity(Math.min(10, quantity + 1))
-                            }
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            disabled={item.quantity >= 10}
                           >
                             +
                           </Button>
@@ -190,7 +187,7 @@ const Addcart = () => {
             </div>
             <hr className="cartHR" />
             <div className="row">
-              <div className="col">ITEMS {cartItems.length}</div>
+              <div className="col">ITEMS {cartItems.reduce((count, item) => count + item.quantity, 0)}</div>
               <div className="col text-right">₹{calculateTotal()}</div>
             </div>
             <form className="cartForm">

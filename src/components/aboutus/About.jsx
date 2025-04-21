@@ -23,7 +23,7 @@ const About = () => {
           <h1>Welcome to Jagdamba</h1>
           <p>Your One-Stop Shop for Electronics!</p>
         </section>
-        <section class="py-1  ">
+        <section class="about1  ">
           <div class="container mt-5">
             <div class="row align-items-center gx-4">
               <div class="col-md-5 col-sm-12">

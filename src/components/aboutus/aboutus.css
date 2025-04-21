@@ -73,8 +73,6 @@ body {
   /* justify-content: space-between; */
 }
 
-
-
 /* About Us Section */
 .py-5 {
   padding-top: 5rem;
@@ -132,7 +130,6 @@ h2 {
   margin-bottom: 1rem;
   color: #333;
 }
-
 
 .contact-container {
   text-align: center;
@@ -201,7 +198,7 @@ h3 {
   height: 100%;
 }
 
-.heroSwiper .swiper-button-prev ,
+.heroSwiper .swiper-button-prev,
 .heroSwiper .swiper-button-next {
   width: 40px;
   height: 40px;
@@ -212,17 +209,14 @@ h3 {
   /* margin-top: 5px; */
   align-items: center;
   color: black;
-
-  
 }
 
-.heroSwiper .swiper-button-prev:after ,
-  .heroSwiper .swiper-button-next:after {
-
+.heroSwiper .swiper-button-prev:after,
+.heroSwiper .swiper-button-next:after {
   font-size: 18px;
   color: #333;
   font-weight: bold;
-  }
+}
 
 .heroSwiper .swiper-slide {
   text-align: center;
@@ -321,14 +315,11 @@ h3 {
   line-height: 1.5; /* Improve readability */
 }
 
-
 @media (max-width: 768px) and (min-width: 614px) {
-
-  
-.about-us-container {
-  padding: 58px 32px !important;
-  margin-top: 46px !important;
-}
+  .about-us-container {
+    padding: 58px 32px !important;
+    margin-top: 46px !important;
+  }
 
   .vision-container {
     flex-direction: column;
@@ -373,19 +364,20 @@ h3 {
     margin-left: 0;
     padding: 0;
   }
- 
 
   .lead {
     font-size: 1rem;
   }
+  .about1 {
+    margin-top: -60px;
+  }
 }
 
-@media (max-width: 613px) and (min-width: 425px){
-.about-us-container {
-  margin-top: 46px !important;
+@media (max-width: 613px) and (min-width: 425px) {
+  .about-us-container {
+    margin-top: 46px !important;
   }
 
-  
   .vision-container {
     flex-direction: column;
     height: auto;
@@ -429,17 +421,13 @@ h3 {
     margin-left: 0;
     padding: 0;
   }
- 
 
   .lead {
     font-size: 1rem;
   }
-
-  
 }
 
-@media (max-width: 614px) and (min-width: 375px){
-
+@media (max-width: 614px) and (min-width: 375px) {
   .aboutContent1 {
     margin: 10px;
   }
@@ -448,8 +436,8 @@ h3 {
     margin: 10px;
   }
 
-.about-us-container {
-  margin-top: 46px !important;
+  .about-us-container {
+    margin-top: 46px !important;
   }
 
   .vision-container {
@@ -495,7 +483,6 @@ h3 {
     margin-left: 0;
     padding: 0;
   }
- 
 
   .lead {
     font-size: 1rem;
@@ -505,9 +492,8 @@ h3 {
   .ourVision {
     margin-left: 10px;
   }
-
 }
-@media (max-width: 611px) and (min-width: 320px){
+@media (max-width: 611px) and (min-width: 320px) {
   .aboutContent1 {
     margin: 10px;
   }
@@ -516,8 +502,8 @@ h3 {
     margin: 10px;
   }
 
-.about-us-container {
-  margin-top: 46px !important;
+  .about-us-container {
+    margin-top: 46px !important;
   }
 
   .vision-container {
@@ -563,7 +549,6 @@ h3 {
     margin-left: 8px;
     padding: 0;
   }
- 
 
   .lead {
     font-size: 1rem;
@@ -574,9 +559,6 @@ h3 {
     margin-left: 10px;
   }
 }
-
-
-
 
 /* @media (max-width: 992px) {
   .vision-container {
@@ -629,24 +611,21 @@ h3 {
   }
 } */
 
+.abtimg {
+  width: 100%;
+  height: auto;
+  padding-right: 12px;
+  margin-right: 50px !important;
+}
 
+.vision-container {
+  padding: 20px 10px;
+}
 
-  .abtimg {
-    width: 100%;
-    height: auto;
-    padding-right: 12px;
-    margin-right: 50px !important;
-  }
+.info-section {
+  width: 100%;
+}
 
-  .vision-container {
-    padding: 20px 10px;
-  }
-
-  .info-section {
-    width: 100%;
-  }
-
-  .heroSwiper .swiper-slide img {
-    height: auto;
-  }
-
+.heroSwiper .swiper-slide img {
+  height: auto;
+}

@@ -1,6 +1,5 @@
 .Testi {
- 
-   margin-top: 230px !important;
+  margin-top: 230px !important;
 }
 
 .read-more-link {
@@ -16,29 +15,25 @@
 }
 
 @media (min-width: 320px) and (max-width: 610px) {
-  .container , .Testi {
+  .container,
+  .Testi {
     padding-top: 0 !important;
     margin-top: 112px !important;
   }
 }
 
 @media (min-width: 768px) and (max-width: 768px) {
-  
-.Testi {
+  /* .Testi {
   margin-top: 122px !important;
-}
+} */
 
-.container {
-  margin-top: 120px !important;
-}
+  .container {
+    margin-top: 120px !important;
+  }
 
-    /* .Testi.container {
+  /* .Testi.container {
       
       margin-top: 112px !important;
       padding: 0 !important;
     } */
-  }
-
-
-
-
+}
