@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // New function to update quantity
+  // Function to update quantity
   const updateQuantity = (productId, newQuantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -55,7 +55,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
-        cartCount,
+        cartCount
       }}
     >
       {children}

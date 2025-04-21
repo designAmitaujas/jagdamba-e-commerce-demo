@@ -17,15 +17,33 @@ import Footer from "./Footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
-// import "../components/FridgeList.css"; // Import your CSS file here
-import "../components/FridgeList.css"; // Import your CSS file here
+import "../components/FridgeList.css";
 
 const FridgeList = () => {
   const [showFilters, setShowFilters] = useState(false);
   const navigate = useNavigate();
-  const { addToCart } = useCart();
+  const { addToCart, getCartItems } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const [addedToCart, setAddedToCart] = useState([]);
+
+  // Load the addedToCart state from localStorage when component mounts
+  useEffect(() => {
+    const storedCartItems = localStorage.getItem('addedToCartItems');
+    if (storedCartItems) {
+      setAddedToCart(JSON.parse(storedCartItems));
+    }
+    
+    // Alternative: Check if items exist in cart context
+    const cartItems = getCartItems ? getCartItems() : [];
+    if (cartItems.length > 0) {
+      const cartItemIds = cartItems.map(item => item.id);
+      setAddedToCart(prevIds => {
+        const newIds = [...new Set([...prevIds, ...cartItemIds])];
+        localStorage.setItem('addedToCartItems', JSON.stringify(newIds));
+        return newIds;
+      });
+    }
+  }, [getCartItems]);
 
   const handleAddToCart = (product) => {
     if (!addedToCart.includes(product.id)) {
@@ -36,19 +54,31 @@ const FridgeList = () => {
         image: product.image,
         quantity: 1,
       });
-      setAddedToCart([...addedToCart, product.id]);
+      
+      // Update addedToCart state and store in localStorage
+      const updatedCart = [...addedToCart, product.id];
+      setAddedToCart(updatedCart);
+      localStorage.setItem('addedToCartItems', JSON.stringify(updatedCart));
     }
   };
 
   const handleBuyNow = (product) => {
     // Add to cart first
-    addToCart({
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      quantity: 1,
-    });
+    if (!addedToCart.includes(product.id)) {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: 1,
+      });
+      
+      // Update addedToCart state and store in localStorage
+      const updatedCart = [...addedToCart, product.id];
+      setAddedToCart(updatedCart);
+      localStorage.setItem('addedToCartItems', JSON.stringify(updatedCart));
+    }
+    
     // Navigate to checkout
     navigate("/checkout");
   };
@@ -198,132 +228,7 @@ const FridgeList = () => {
               </div>
             </div>
 
-            {/* Products */}
-            {/* <div className="d-flex flex-column gap-4 px-4 newCard">
-              {products.map((product) => (
-                <Card
-                  key={product.id}
-                  className="border-0 shadow-sm"
-                  style={{maxWidth: "98%",margin:"10px",padding:0, cursor: "pointer"}}
-                >
-                  <div className="d-flex flex-column flex-md-row innercarrd">
-                    <div
-                      style={{ width: "300px", cursor: "pointer" }}
-                      className="p-3"
-                      onClick={() => navigate("/productdetail")}
-                    >
-                      <div className="position-relative">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="w-100 h-auto px-5 py-2 object-fit-contain"
-                          style={{ maxWidth: "200px", maxHeight: "300px" }}
-                        />
-                        <Badge
-                          bg="warning"
-                          className="position-absolute top-0 start-0 mx-1"
-                        >
-                          Jagdamba's Choice
-                        </Badge>
-                        <Button
-                          variant="light"
-                          className="position-absolute top-0 end-0 m-2 rounded-circle p-2"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleWishlistToggle(product);
-                          }}
-                          style={{
-                            color: isInWishlist(product.id) ? "red" : "inherit",
-                            border: "none",
-                            backgroundColor: "white",
-                          }}
-                        >
-                          <Heart
-                            size={20}
-                            fill={isInWishlist(product.id) ? "red" : "none"}
-                          />
-                        </Button>
-                      </div>
-                    </div>
-
-                    <div
-                      className="flex-grow-1 p-4"
-                      onClick={() => navigate("/productdetail")}
-                      style={{ cursor: "pointer" }}
-                    >
-                      <div className="d-flex justify-content-between align-items-start texts">
-                        <div>
-                          <h5 className="mb-2">{product.name}</h5>
-                          <div className="d-flex align-items-center gap-2 mb-3">
-                            <Badge
-                              bg="success"
-                              className="d-flex align-items-center gap-1"
-                            >
-                              {product.rating}{" "}
-                              <Star size={12} fill="currentColor" />
-                            </Badge>
-                            <span className="text-muted">
-                              ({product.reviews} reviews)
-                            </span>
-                          </div>
-                        </div>
-                        <div className="text-start text-md-end mt-2 mt-md-0">
-                          <h4 className="mb-0">₹{product.price}</h4>
-                          <small className="text-muted text-decoration-line-through">
-                            ₹{product.price * 1.35}
-                          </small>
-                          <div className="text-success">25% off</div>
-                          <div className="text-success mt-1">Free delivery</div>
-                          <div className="text-primary">Bank Offer</div>
-                        </div>
-                      </div>
-
-                      <ul className="list-unstyled mb-4">
-                        <li className="mb-1">• Reciprocating Compressor</li>
-                        <li className="mb-1">• Built-in Stabilizer</li>
-                        <li className="mb-1">
-                          • 1 Year Comprehensive Warranty on Product and 9 Years
-                          Warranty on Compressor
-                        </li>
-                      </ul>
-
-                      <div
-                        className="d-flex gap-2 btnfridge"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <Button
-                          variant="primary"
-                          className="d-flex align-items-center gap-2 addCartbtn"
-                          onClick={() => handleAddToCart(product)}
-                          disabled={addedToCart.includes(product.id)}
-                          style={{
-                            
-                          }}
-                        >
-                          <ShoppingCart size={20} />
-                          {addedToCart.includes(product.id)
-                            ? "Added to Cart"
-                            : "Add to Cart"}
-                        </Button>
-                        <Button
-                          variant="outline-primary"
-                          onClick={() => handleBuyNow(product)}
-                          className="buyNowbtn"
-                        >
-                          Buy Now
-                        </Button>
-                        <Form.Check
-                          type="checkbox"
-                          id={`compare-${product.id}`}
-                          label="Add to Compare"
-                          className="ms-3 d-flex align-items-center compare"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div> */}
+       
             <div className="d-flex flex-column gap-4 px-4 newCard">
               {products.map((product) => (
                 <Card
@@ -402,7 +307,7 @@ const FridgeList = () => {
                         <div className="text-start text-md-end mt-2 mt-md-0 price-container">
                           <h4 className="mb-0">₹{product.price}</h4>
                           <small className="text-muted text-decoration-line-through">
-                            ₹{product.price * 1.35}
+                            ₹{Math.round(product.price * 1.35)}
                           </small>
                           <div className="text-success">25% off</div>
                           <div className="text-success mt-1">Free delivery</div>
@@ -423,17 +328,25 @@ const FridgeList = () => {
                         className="d-flex gap-2 btnfridge"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <Button
-                          variant="primary"
-                          className="d-flex align-items-center gap-2 addCartbtn"
-                          onClick={() => handleAddToCart(product)}
-                          disabled={addedToCart.includes(product.id)}
-                        >
-                          <ShoppingCart size={20} />
-                          {addedToCart.includes(product.id)
-                            ? "Added to Cart"
-                            : "Add to Cart"}
-                        </Button>
+                        {addedToCart.includes(product.id) ? (
+                          <Button
+                            variant="success"
+                            className="d-flex align-items-center gap-2 addCartbtn"
+                            disabled
+                          >
+                            <Check size={20} />
+                            Added to Cart
+                          </Button>
+                        ) : (
+                          <Button
+                            variant="primary"
+                            className="d-flex align-items-center gap-2 addCartbtn"
+                            onClick={() => handleAddToCart(product)}
+                          >
+                            <ShoppingCart size={20} />
+                            Add to Cart
+                          </Button>
+                        )}
                         <Button
                           variant="outline-primary"
                           onClick={() => handleBuyNow(product)}
@@ -453,7 +366,6 @@ const FridgeList = () => {
                 </Card>
               ))}
             </div>
-
             {/* Pagination */}
             <div className="d-flex justify-content-center mt-5">
               <nav aria-label="Page navigation">
