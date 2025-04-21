@@ -664,7 +664,7 @@ const ProductDetail = () => {
                             </div>
 
                             {/* Comment 2 */}
-                            <div className="single-comment mb-4 ms-md-4">
+                            <div className="single-comment mb-4">
                               <div className="user-comment d-flex flex-column flex-md-row">
                                 <div className="user-info text-center mb-3 mb-md-0 me-md-3">
                                   <img
